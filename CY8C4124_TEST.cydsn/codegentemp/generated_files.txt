@@ -73,6 +73,29 @@
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\ISR_W0.h" value="HEADER;;;;;ISR_W0" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\ISR_R0.c" value="SOURCE_C;CortexM0;;;;ISR_R0" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\ISR_R0.h" value="HEADER;;;;;ISR_R0" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial.c" value="SOURCE_C;CortexM0;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial.h" value="HEADER;;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_SPI_UART.h" value="HEADER;;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_SPI_UART.c" value="SOURCE_C;CortexM0;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_SPI_UART_INT.c" value="SOURCE_C;CortexM0;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_PM.c" value="SOURCE_C;CortexM0;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_UART.c" value="SOURCE_C;CortexM0;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_BOOT.c" value="SOURCE_C;CortexM0;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_UART_BOOT.c" value="SOURCE_C;CortexM0;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_PINS.h" value="HEADER;;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_SPI_UART_PVT.h" value="HEADER;;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_PVT.h" value="HEADER;;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_BOOT.h" value="HEADER;;;;;Serial" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_SCBCLK.c" value="SOURCE_C;CortexM0;;;;Serial_SCBCLK" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_SCBCLK.h" value="HEADER;;;;;Serial_SCBCLK" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_tx.c" value="SOURCE_C;CortexM0;;;;Serial_tx" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_tx.h" value="HEADER;;;;;Serial_tx" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_tx_aliases.h" value="HEADER;;;;;Serial_tx" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_tx_PM.c" value="SOURCE_C;CortexM0;;;;Serial_tx" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_rx.c" value="SOURCE_C;CortexM0;;;;Serial_rx" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_rx.h" value="HEADER;;;;;Serial_rx" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_rx_aliases.h" value="HEADER;;;;;Serial_rx" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Serial_rx_PM.c" value="SOURCE_C;CortexM0;;;;Serial_rx" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\cm0gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Cm0RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Cm0Start.c" value="SOURCE_C;CortexM0;;;;cy_boot" />

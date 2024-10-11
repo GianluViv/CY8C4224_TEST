@@ -4,11 +4,12 @@
 
 /* Variabili globali */
 #define PERIOD 10000   // USA NUMERI PARI
-#define W_BRIGHT 1500  // MAX PERIOD / 2
-#define R_BRIGHT 1500  // MAX PERIOD / 2
+#define W_BRIGHT 2000  // MAX PERIOD / 2
+#define R_BRIGHT 2000  // MAX PERIOD / 2
 
-volatile uint32 msTicks = 0;  // Variabile globale per il conteggio dei millisecondi
-volatile uint32 msCont = 0;  // Variabile globale per il conteggio dei millisecondi
+volatile uint32_t msTicks = 0;  // Variabile globale per il conteggio dei millisecondi
+volatile uint32_t msCont = 0;  // Variabile globale per il conteggio dei millisecondi
+uint32_t lastTime = 0;
 char myString[25];
 
 // struttura che contiene un bitfield per pilotare i LED
@@ -44,8 +45,9 @@ CY_ISR_PROTO(driveLED_OFF);
 void SysTick_Handler(void);
 
 int main() {
-    /* Inizializza UART */
-    //UART_Start();
+    // Inizializza Serial
+    Serial_Start();
+
     // Inizializzo il PWM_W
     PWM_W_WritePeriod(PERIOD);
     PWM_R_WritePeriod(PERIOD);
@@ -82,15 +84,25 @@ int main() {
     LED_R.bit.led5 = 1;
     LED_R.bit.led9 = 1;
 
-
     while (1) {
         // ciclo eseguito ad ogni 1000 millisecondi
-        if (msTicks % 1000 == 0) {
-            // Qui puoi leggere il valore di msTicks per sapere quanti millisecondi sono passati
-            sprintf(myString, "Millis: %ldms.\n", msTicks);  // <Stampa il valore di msTicks
-            //UART_PutString(myString);
-            }
+        // if (msTicks % 1000 == 0) {
+        //     // Qui puoi leggere il valore di msTicks per sapere quanti millisecondi sono passati
 
+        if ((msTicks - lastTime) >= SEND_INTERVAL) {
+            lastTime = msTicks;
+            LED_W.bit.led3 = !LED_W.bit.led3;
+            sprintf(myString, "Millis: %ldms.\n", msTicks);  // <Stampa il valore di msTicks
+            Serial_UartPutString(myString);  // <Stampa il valore di msTicks>
+            }
+        }
+
+    while (1) {
+        /* Get received character or zero if nothing has been received yet */
+        char ch = UART_UartGetChar();
+        if (0u != ch) {
+            UART_UartPutChar(ch);
+            }
         }
     }
 
@@ -112,7 +124,7 @@ CY_ISR(driveLED_W) {
     (LED_W.bit.led7) ? LED_7_Write(0) : LED_7_Write(1);
     (LED_W.bit.led8) ? LED_8_Write(0) : LED_8_Write(1);
     (LED_W.bit.led9) ? LED_9_Write(0) : LED_9_Write(1);
-    PWM_W_WriteCompare(300);
+    PWM_W_WriteCompare(W_BRIGHT);
     ISR_W_ClearPending();
     // msCont++;
     }
@@ -128,7 +140,7 @@ CY_ISR(driveLED_R) {
     (LED_R.bit.led7) ? LED_7_Write(0) : LED_7_Write(1);
     (LED_R.bit.led8) ? LED_8_Write(0) : LED_8_Write(1);
     (LED_R.bit.led9) ? LED_9_Write(0) : LED_9_Write(1);
-    PWM_R_WriteCompare(300);
+    PWM_R_WriteCompare(R_BRIGHT);
     ISR_R_ClearPending();
     }
 

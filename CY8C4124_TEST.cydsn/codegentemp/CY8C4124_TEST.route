@@ -83,3 +83,16 @@ net Net_153
 	switch ":interrupt_idmux_2.interrupt_idmux_2__out==>:interrupt_2.interrupt"
 	term   ":interrupt_2.interrupt"
 end Net_153
+net \Serial:rx_wire\
+	term   ":ioport3:pin0.fb"
+	switch ":ioport3:pin0.fb==>:ioport3:hsiom_in0.hsiom0_in"
+	switch ":ioport3:hsiom_in0.fixed_ACT_1==>:m0s8scbcell_1__uart_rx__hsiom_permute.ioport3__fixed_out_p0_ACT_1"
+	switch ":m0s8scbcell_1__uart_rx__hsiom_permute.m0s8scbcell_1__uart_rx==>:m0s8scbcell_1.uart_rx"
+	term   ":m0s8scbcell_1.uart_rx"
+end \Serial:rx_wire\
+net \Serial:tx_wire\
+	term   ":m0s8scbcell_1.uart_tx"
+	switch ":m0s8scbcell_1.uart_tx==>:ioport3:hsiom_out1.fixed_ACT_1"
+	switch ":ioport3:hsiom_out1.hsiom1_out==>:ioport3:pin1.pin_input"
+	term   ":ioport3:pin1.pin_input"
+end \Serial:tx_wire\

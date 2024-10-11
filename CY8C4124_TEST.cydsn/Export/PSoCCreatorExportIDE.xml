@@ -146,6 +146,29 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cycodeshareimport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cycodeshareexport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cycodeshareimport.scat</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_SPI_UART.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_SPI_UART.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_SPI_UART_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_UART.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_UART_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_PINS.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_SPI_UART_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_BOOT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_SCBCLK.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_SCBCLK.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_tx.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_tx.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_tx_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_tx_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_rx.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_rx.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_rx_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Serial_rx_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">

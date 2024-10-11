@@ -223,8 +223,9 @@ static void ClockSetup(void)
 
 
 	/* CYDEV_CLK_SELECT00 Starting address: CYDEV_CLK_SELECT00 */
-	CY_SET_REG32((void *)(CYREG_CLK_SELECT08), 0x00000010u);
-	CY_SET_REG32((void *)(CYREG_CLK_SELECT10), 0x00000010u);
+	CY_SET_REG32((void *)(CYREG_CLK_SELECT03), 0x00000010u);
+	CY_SET_REG32((void *)(CYREG_CLK_SELECT08), 0x00000020u);
+	CY_SET_REG32((void *)(CYREG_CLK_SELECT10), 0x00000020u);
 
 	/* CYDEV_CLK_IMO_CONFIG Starting address: CYDEV_CLK_IMO_CONFIG */
 	CY_SET_REG32((void *)(CYREG_CLK_IMO_CONFIG), 0x80000000u);
@@ -233,7 +234,10 @@ static void ClockSetup(void)
 	CY_SET_REG32((void *)(CYREG_CLK_SELECT), 0x00000000u);
 
 	/* CYDEV_CLK_DIVIDER_A00 Starting address: CYDEV_CLK_DIVIDER_A00 */
-	CY_SET_REG32((void *)(CYREG_CLK_DIVIDER_A00), 0x80000017u);
+	CY_SET_REG32((void *)(CYREG_CLK_DIVIDER_A00), 0x8000000Cu);
+
+	/* CYDEV_CLK_DIVIDER_B00 Starting address: CYDEV_CLK_DIVIDER_B00 */
+	CY_SET_REG32((void *)(CYREG_CLK_DIVIDER_B00), 0x80000017u);
 
 	(void)CyIntSetVector(9u, &CySysWdtIsr);
 	CyIntEnable(9u);
@@ -353,7 +357,7 @@ void cyfitter_cfg(void)
 		cfg_write_bytes32(cy_cfg_addr_table, cy_cfg_data_table);
 
 		/* HSIOM Starting address: CYDEV_HSIOM_BASE */
-		CY_SET_REG32((void *)(CYREG_HSIOM_PORT_SEL3), 0x0038EE00u);
+		CY_SET_REG32((void *)(CYREG_HSIOM_PORT_SEL3), 0x0038EE99u);
 
 		/* UDB_PA_0 Starting address: CYDEV_UDB_PA0_BASE */
 		CY_SET_REG32((void *)(CYDEV_UDB_PA0_BASE), 0x00990000u);
@@ -378,8 +382,9 @@ void cyfitter_cfg(void)
 	CY_SET_REG32((void *)(CYREG_PRT0_PC), 0x00DB6DB6u);
 
 	/* IOPINS0_3 Starting address: CYDEV_PRT3_BASE */
-	CY_SET_REG32((void *)(CYDEV_PRT3_BASE), 0x000000B0u);
-	CY_SET_REG32((void *)(CYREG_PRT3_PC), 0x00C36D80u);
+	CY_SET_REG32((void *)(CYDEV_PRT3_BASE), 0x000000B2u);
+	CY_SET_REG32((void *)(CYREG_PRT3_PC), 0x00C36DB1u);
+	CY_SET_REG32((void *)(CYREG_PRT3_PC2), 0x00000002u);
 
 
 	/* Setup clocks based on selections from Clock DWR */
