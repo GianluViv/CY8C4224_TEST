@@ -86,6 +86,18 @@
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\UART_SPI_UART_PVT.h" value="HEADER;;;;;UART" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\UART_PVT.h" value="HEADER;;;;;UART" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\UART_BOOT.h" value="HEADER;;;;;UART" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button.c" value="SOURCE_C;CortexM0;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button.h" value="HEADER;;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_PM.c" value="SOURCE_C;CortexM0;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_CSHL.c" value="SOURCE_C;CortexM0;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_CSHL.h" value="HEADER;;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_INT.c" value="SOURCE_C;CortexM0;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_TunerHelper.c" value="SOURCE_C;CortexM0;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_TunerHelper.h" value="HEADER;;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_SMS.c" value="SOURCE_C;CortexM0;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_SMS.h" value="HEADER;;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_PVT.h" value="HEADER;;;;;Button" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_IP.h" value="HEADER;;;;;Button" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\UART_SCBCLK.c" value="SOURCE_C;CortexM0;;;;UART_SCBCLK" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\UART_SCBCLK.h" value="HEADER;;;;;UART_SCBCLK" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\UART_tx.c" value="SOURCE_C;CortexM0;;;;UART_tx" />
@@ -98,6 +110,11 @@
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\UART_rx.h" value="HEADER;;;;;UART_rx" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\UART_rx_aliases.h" value="HEADER;;;;;UART_rx" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\UART_rx_PM.c" value="SOURCE_C;CortexM0;;;;UART_rx" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_SampleClk.c" value="SOURCE_C;CortexM0;;;;Button_SampleClk" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_SampleClk.h" value="HEADER;;;;;Button_SampleClk" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_Sns_aliases.h" value="HEADER;;;;;Button_Sns" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_SenseClk.c" value="SOURCE_C;CortexM0;;;;Button_SenseClk" />
+  <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Button_SenseClk.h" value="HEADER;;;;;Button_SenseClk" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\cm0gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Cm0RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
   <file name="C:\Users\gianluca_2\Desktop\Workspace01\CY8C4124_TEST.cydsn\codegentemp\Cm0Start.c" value="SOURCE_C;CortexM0;;;;cy_boot" />

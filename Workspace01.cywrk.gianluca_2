@@ -75,6 +75,14 @@
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Button.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Button_CSHL.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Button_INT.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Button_PM.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Button_SampleClk.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Button_SenseClk.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Button_SMS.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Button_TunerHelper.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
@@ -140,54 +148,6 @@
 <VisibleNodeIds>
 <v>Workspace01</v>
 <v>Workspace01\CY8C4124_TEST</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\ISR_R.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\ISR_R0.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\ISR_W.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\ISR_W0.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_1.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_1_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_2.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_2_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_3.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_3_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_4.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_4_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_5.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_5_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_6.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_6_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_7.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_7_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_8.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_8_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_9.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_9_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_R.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_R_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_W.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_W_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\RED.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\RED_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_BOOT.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -204,6 +164,7 @@
 <v>Workspace01\CY8C4124_TEST\System Reference Guides</v>
 <v>Workspace01\CY8C4124_TEST\System Reference Guides\cy_boot_v6_10</v>
 <v>Workspace01\CY8C4124_TEST\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Workspace01\CY8C4124_TEST\CapSense_CSD_P4_v2_60.pdf</v>
 <v>Workspace01\CY8C4124_TEST\cy_clock_v2_20.pdf</v>
 <v>Workspace01\CY8C4124_TEST\cy_isr_v1_71</v>
 <v>Workspace01\CY8C4124_TEST\cy_isr_v1_71\cy_isr_v1_71.pdf</v>
@@ -221,6 +182,7 @@
 <v>Workspace01\CY8C4124_TEST\System Reference Guides</v>
 <v>Workspace01\CY8C4124_TEST\System Reference Guides\cy_boot_v6_10</v>
 <v>Workspace01\CY8C4124_TEST\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Workspace01\CY8C4124_TEST\CapSense_CSD_P4_v2_60.pdf</v>
 <v>Workspace01\CY8C4124_TEST\cy_clock_v2_20.pdf</v>
 <v>Workspace01\CY8C4124_TEST\cy_isr_v1_71</v>
 <v>Workspace01\CY8C4124_TEST\cy_isr_v1_71\cy_isr_v1_71.pdf</v>

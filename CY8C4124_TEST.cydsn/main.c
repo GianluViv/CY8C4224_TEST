@@ -10,6 +10,7 @@
 volatile uint32_t msTicks = 0;  // Variabile globale per il conteggio dei millisecondi
 volatile uint32_t msCont = 0;  // Variabile globale per il conteggio dei millisecondi
 uint32_t lastTime = 0;
+uint32_t lastTime2 = 0;
 char myString[25];
 
 // struttura che contiene un bitfield per pilotare i LED
@@ -74,23 +75,23 @@ int main() {
     CyGlobalIntEnable;
 
     // quali LEDS accendo?
-    LED_W.bit.led1 = 1;
-    LED_W.bit.led2 = 1;
-    LED_W.bit.led7 = 1;
-    LED_W.bit.led9 = 1;
-
-    LED_R.bit.led4 = 1;
-    LED_R.bit.led8 = 1;
-    LED_R.bit.led5 = 1;
-    LED_R.bit.led9 = 1;
+    LED_W.data = 0;
+    LED_R.data = 0xFFFF;
 
     while (1) {
         // ciclo eseguito ad ogni 1000 millisecondi
+        if ((msTicks - lastTime2) >= SEND_INTERVAL/10) {
+            lastTime2 = msTicks;
+            LED_W.data++;
+            LED_R.data--;
+            }
         if ((msTicks - lastTime) >= SEND_INTERVAL) {
             lastTime = msTicks;
             LED_W.bit.led3 = !LED_W.bit.led3;
             sprintf(myString, "Millis: %ldms.\n", msTicks);  // <Stampa il valore di msTicks        
             UART_UartPutString(myString);  // <Stampa il valore di msTicks>
+            LED_W.data++;
+            LED_R.data--;
             }
         // verifica della connessione seriale
         while (dataAvailable) {

@@ -1,5 +1,5 @@
 # CY8C4124_TEST
-# 2024-10-11 14:33:16Z
+# 2024-10-11 14:49:38Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
@@ -22,3 +22,11 @@ set_io "LED_9(0)" iocell 3 7
 set_io "LED_5(0)" iocell 0 3
 set_io "\UART:tx(0)\" iocell 3 1
 set_io "\UART:rx(0)\" iocell 3 0
+set_io "\Button:Cmod(0)\" iocell 4 2
+set_io "\Button:Sns(0)\" iocell 4 0
+set_io "\Button:Sns(1)\" iocell 1 2
+set_io "\Button:Sns(2)\" iocell 1 0
+set_io "\Button:Sns(3)\" iocell 4 3
+set_location "\Button:CSD_FFB\" p4csdcell -1 -1 0
+set_location "\Button:IDAC2:cy_psoc4_idac\" p4csidac7cell -1 -1 0
+set_location "\Button:IDAC1:cy_psoc4_idac\" p4csidac8cell -1 -1 0
