@@ -1,0 +1,8 @@
+C:/Users/gianluca_2/Desktop/Workspace01/CY8C4124_TEST.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/Users/gianluca_2/Desktop/Workspace01/CY8C4124_TEST.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s C:/Users/gianluca_2/Desktop/Workspace01/CY8C4124_TEST.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc C:/Users/gianluca_2/Desktop/Workspace01/CY8C4124_TEST.cydsn/Generated_Source/PSoC4/cyfittergnu.inc 
+
+C:/Users/gianluca_2/Desktop/Workspace01/CY8C4124_TEST.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
+
+C:/Users/gianluca_2/Desktop/Workspace01/CY8C4124_TEST.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc : 
+
+C:/Users/gianluca_2/Desktop/Workspace01/CY8C4124_TEST.cydsn/Generated_Source/PSoC4/cyfittergnu.inc : 
+

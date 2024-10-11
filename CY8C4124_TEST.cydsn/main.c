@@ -1,13 +1,17 @@
-#include <stdio.h>
-#include <project.h>
+#include <global.h>
 
 #define SEND_INTERVAL 1000
 
 /* Variabili globali */
+#define PERIOD 10000   // USA NUMERI PARI
+#define W_BRIGHT 1500  // MAX PERIOD / 2
+#define R_BRIGHT 1500  // MAX PERIOD / 2
+
 volatile uint32 msTicks = 0;  // Variabile globale per il conteggio dei millisecondi
 volatile uint32 msCont = 0;  // Variabile globale per il conteggio dei millisecondi
 char myString[25];
 
+// struttura che contiene un bitfield per pilotare i LED
 typedef struct {
     uint8_t led0 : 1;
     uint8_t led1 : 1;
@@ -27,6 +31,7 @@ typedef struct {
     uint8_t ledF : 1;
     }my_bits;
 
+// union per accedere ai led sia bit a bit sia a blocchi
 union my_LEDS {
     my_bits bit;
     uint16_t data;
@@ -40,8 +45,12 @@ void SysTick_Handler(void);
 
 int main() {
     /* Inizializza UART */
-    UART_Start();
+    //UART_Start();
     // Inizializzo il PWM_W
+    PWM_W_WritePeriod(PERIOD);
+    PWM_R_WritePeriod(PERIOD);
+    PWM_W_WriteCounter(0000);
+    PWM_R_WriteCounter(PERIOD / 2);
     PWM_W_Start();
     PWM_R_Start();
 
@@ -49,21 +58,20 @@ int main() {
     CySysTickStart();
     CySysTickSetCallback(0, SysTick_Handler);  // Associa il gestore dell'interrupt
 
-    /* Sets up the GPIO interrupt and enables it */
+    /// inizializzo gli interupt
     ISR_R_StartEx(driveLED_R);
     ISR_W_StartEx(driveLED_W);
     ISR_W0_StartEx(driveLED_OFF);
     ISR_R0_StartEx(driveLED_OFF);
-    // ISR_W_StartEx(driveLED_OFF);
 
-    // gioco con PWM..
+    // setto i valori iniziali dei counter dei PWM dei LED
     PWM_W_WriteCounter(0000);
     PWM_R_WriteCounter(5000);
-
 
     // Abilita interrupt globali
     CyGlobalIntEnable;
 
+    // quali LEDS accendo?
     LED_W.bit.led1 = 1;
     LED_W.bit.led2 = 1;
     LED_W.bit.led7 = 1;
@@ -80,7 +88,7 @@ int main() {
         if (msTicks % 1000 == 0) {
             // Qui puoi leggere il valore di msTicks per sapere quanti millisecondi sono passati
             sprintf(myString, "Millis: %ldms.\n", msTicks);  // <Stampa il valore di msTicks
-            UART_PutString(myString);
+            //UART_PutString(myString);
             }
 
         }
