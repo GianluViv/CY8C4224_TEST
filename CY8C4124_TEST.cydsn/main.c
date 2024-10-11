@@ -4,8 +4,8 @@
 
 /* Variabili globali */
 #define PERIOD 10000   // USA NUMERI PARI
-#define W_BRIGHT 2000  // MAX PERIOD / 2
-#define R_BRIGHT 2000  // MAX PERIOD / 2
+#define W_BRIGHT 500  // MAX PERIOD / 2
+#define R_BRIGHT 500  // MAX PERIOD / 2
 
 volatile uint32_t msTicks = 0;  // Variabile globale per il conteggio dei millisecondi
 volatile uint32_t msCont = 0;  // Variabile globale per il conteggio dei millisecondi
@@ -45,8 +45,8 @@ CY_ISR_PROTO(driveLED_OFF);
 void SysTick_Handler(void);
 
 int main() {
-    // Inizializza Serial
-    Serial_Start();
+    // Inizializza UART
+    UART_Start();
 
     // Inizializzo il PWM_W
     PWM_W_WritePeriod(PERIOD);
@@ -86,25 +86,22 @@ int main() {
 
     while (1) {
         // ciclo eseguito ad ogni 1000 millisecondi
-        // if (msTicks % 1000 == 0) {
-        //     // Qui puoi leggere il valore di msTicks per sapere quanti millisecondi sono passati
-
         if ((msTicks - lastTime) >= SEND_INTERVAL) {
             lastTime = msTicks;
             LED_W.bit.led3 = !LED_W.bit.led3;
-            sprintf(myString, "Millis: %ldms.\n", msTicks);  // <Stampa il valore di msTicks
-            Serial_UartPutString(myString);  // <Stampa il valore di msTicks>
+            sprintf(myString, "Millis: %ldms.\n", msTicks);  // <Stampa il valore di msTicks        
+            UART_UartPutString(myString);  // <Stampa il valore di msTicks>
+            }
+        // verifica della connessione seriale
+        while (dataAvailable) {
+            static int i = 0;
+            uint8_t receivedByte = UART_UartGetChar();
+            if (receivedByte == 0) break;  // Se il carattere ricevuto e' 0, esce dal while
+            myString[i++] = receivedByte;
+            // UART_UartPutChar(receivedByte);  // Echo del carattere ricevuto.
             }
         }
-
-    while (1) {
-        /* Get received character or zero if nothing has been received yet */
-        char ch = UART_UartGetChar();
-        if (0u != ch) {
-            UART_UartPutChar(ch);
-            }
-        }
-    }
+    }  // fine del main principale
 
 
 // Funzione chiamata dall'interrupt SysTick ogni millisecondo

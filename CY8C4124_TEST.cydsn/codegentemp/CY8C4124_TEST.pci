@@ -1,5 +1,5 @@
 # CY8C4124_TEST
-# 2024-10-11 12:43:04Z
+# 2024-10-11 14:33:16Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
@@ -20,5 +20,5 @@ set_io "LED_7(0)" iocell 0 1
 set_io "LED_8(0)" iocell 0 0
 set_io "LED_9(0)" iocell 3 7
 set_io "LED_5(0)" iocell 0 3
-set_io "\Serial:tx(0)\" iocell 3 1
-set_io "\Serial:rx(0)\" iocell 3 0
+set_io "\UART:tx(0)\" iocell 3 1
+set_io "\UART:rx(0)\" iocell 3 0

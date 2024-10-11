@@ -81,10 +81,10 @@
 #define Serial_UART_MP_RX_ADDRESS         (0x2u)
 #define Serial_UART_MP_RX_ADDRESS_MASK    (0xFFu)
 
-#define Serial_UART_INTERRUPT_MODE        (0u)
+#define Serial_UART_INTERRUPT_MODE        (1u)
 
 #define Serial_UART_INTR_RX_MASK          (0x0u)
-#define Serial_UART_INTR_TX_MASK          (0x0u)
+#define Serial_UART_INTR_TX_MASK          (0x200u)
 
 #define Serial_UART_RX_TRIGGER_LEVEL      (7u)
 #define Serial_UART_TX_TRIGGER_LEVEL      (0u)

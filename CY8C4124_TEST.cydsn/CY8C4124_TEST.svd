@@ -64,7 +64,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>Serial</name>
+      <name>UART</name>
       <description>Serial Communication Block</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>

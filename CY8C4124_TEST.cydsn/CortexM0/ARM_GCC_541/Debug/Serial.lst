@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 1
 
 
    1              		.syntax unified
@@ -19,12 +19,12 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.section	.text.Serial_ScbModePostEnable,"ax",%progbits
+  19              		.section	.text.Serial_ScbEnableIntr,"ax",%progbits
   20              		.align	2
   21              		.code	16
   22              		.thumb_func
-  23              		.type	Serial_ScbModePostEnable, %function
-  24              	Serial_ScbModePostEnable:
+  23              		.type	Serial_ScbEnableIntr, %function
+  24              	Serial_ScbEnableIntr:
   25              	.LFB7:
   26              		.file 1 "Generated_Source\\PSoC4\\Serial.c"
    1:Generated_Source\PSoC4/Serial.c **** /***************************************************************************//**
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
   29:Generated_Source\PSoC4/Serial.c ****     #include "Serial_SPI_UART_PVT.h"
   30:Generated_Source\PSoC4/Serial.c **** #endif /* (Serial_SCB_MODE_SPI_INC || Serial_SCB_MODE_UART_INC) */
   31:Generated_Source\PSoC4/Serial.c **** 
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 2
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 2
 
 
   32:Generated_Source\PSoC4/Serial.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
   86:Generated_Source\PSoC4/Serial.c ****     /** This global variable stores TX interrupt sources after 
   87:Generated_Source\PSoC4/Serial.c ****     * Serial_Stop() is called. Only these TX interrupt sources 
   88:Generated_Source\PSoC4/Serial.c ****     * will be restored on a subsequent Serial_Enable() call.
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 3
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 3
 
 
   89:Generated_Source\PSoC4/Serial.c ****     */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  143:Generated_Source\PSoC4/Serial.c **** 
  144:Generated_Source\PSoC4/Serial.c **** #elif (Serial_SCB_MODE_EZI2C_CONST_CFG)
  145:Generated_Source\PSoC4/Serial.c ****     Serial_EzI2CInit();
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 4
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 4
 
 
  146:Generated_Source\PSoC4/Serial.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  200:Generated_Source\PSoC4/Serial.c **** *  After this function call, the component is enabled and ready for operation.
  201:Generated_Source\PSoC4/Serial.c **** *  When configuration is set to "Unconfigured SCB", the component must first be
  202:Generated_Source\PSoC4/Serial.c **** *  initialized to operate in one of the following configurations: I2C, SPI, UART
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 5
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 5
 
 
  203:Generated_Source\PSoC4/Serial.c **** *  or EZI2C. Otherwise this function does not enable the component.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  257:Generated_Source\PSoC4/Serial.c ****     * is disabled.
  258:Generated_Source\PSoC4/Serial.c ****     */
  259:Generated_Source\PSoC4/Serial.c ****     Serial_SetTxInterruptMode(Serial_NO_INTR_SOURCES);
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 6
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 6
 
 
  260:Generated_Source\PSoC4/Serial.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  314:Generated_Source\PSoC4/Serial.c **** }
  315:Generated_Source\PSoC4/Serial.c **** 
  316:Generated_Source\PSoC4/Serial.c **** 
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 7
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 7
 
 
  317:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_IRQ_INTERNAL)
@@ -402,6 +402,14 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  355:Generated_Source\PSoC4/Serial.c **** *******************************************************************************/
  356:Generated_Source\PSoC4/Serial.c **** static void Serial_ScbEnableIntr(void)
  357:Generated_Source\PSoC4/Serial.c **** {
+  27              		.loc 1 357 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 4, -8
+  34              		.cfi_offset 14, -4
  358:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_IRQ_INTERNAL)
  359:Generated_Source\PSoC4/Serial.c ****     /* Enable interrupt in NVIC */
  360:Generated_Source\PSoC4/Serial.c ****     #if (Serial_SCB_MODE_UNCONFIG_CONST_CFG)
@@ -410,17 +418,34 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  363:Generated_Source\PSoC4/Serial.c ****             Serial_EnableInt();
  364:Generated_Source\PSoC4/Serial.c ****         }
  365:Generated_Source\PSoC4/Serial.c **** 
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 8
+
+
  366:Generated_Source\PSoC4/Serial.c ****     #else
  367:Generated_Source\PSoC4/Serial.c ****         Serial_EnableInt();
+  35              		.loc 1 367 0
+  36 0002 0B20     		movs	r0, #11
+  37 0004 FFF7FEFF 		bl	CyIntEnable
+  38              	.LVL0:
  368:Generated_Source\PSoC4/Serial.c **** 
  369:Generated_Source\PSoC4/Serial.c ****     #endif /* (Serial_SCB_MODE_UNCONFIG_CONST_CFG) */
  370:Generated_Source\PSoC4/Serial.c **** #endif /* (Serial_SCB_IRQ_INTERNAL) */
  371:Generated_Source\PSoC4/Serial.c **** }
+  39              		.loc 1 371 0
+  40              		@ sp needed
+  41 0008 10BD     		pop	{r4, pc}
+  42              		.cfi_endproc
+  43              	.LFE7:
+  44              		.size	Serial_ScbEnableIntr, .-Serial_ScbEnableIntr
+  45 000a C046     		.section	.text.Serial_ScbModePostEnable,"ax",%progbits
+  46              		.align	2
+  47              		.code	16
+  48              		.thumb_func
+  49              		.type	Serial_ScbModePostEnable, %function
+  50              	Serial_ScbModePostEnable:
+  51              	.LFB8:
  372:Generated_Source\PSoC4/Serial.c **** 
  373:Generated_Source\PSoC4/Serial.c **** 
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 8
-
-
  374:Generated_Source\PSoC4/Serial.c **** /*******************************************************************************
  375:Generated_Source\PSoC4/Serial.c **** * Function Name: Serial_ScbModePostEnable
  376:Generated_Source\PSoC4/Serial.c **** ****************************************************************************//**
@@ -430,14 +455,14 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  380:Generated_Source\PSoC4/Serial.c **** *******************************************************************************/
  381:Generated_Source\PSoC4/Serial.c **** static void Serial_ScbModePostEnable(void)
  382:Generated_Source\PSoC4/Serial.c **** {
-  27              		.loc 1 382 0
-  28              		.cfi_startproc
-  29              		@ args = 0, pretend = 0, frame = 0
-  30              		@ frame_needed = 0, uses_anonymous_args = 0
-  31 0000 10B5     		push	{r4, lr}
-  32              		.cfi_def_cfa_offset 8
-  33              		.cfi_offset 4, -8
-  34              		.cfi_offset 14, -4
+  52              		.loc 1 382 0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56 0000 10B5     		push	{r4, lr}
+  57              		.cfi_def_cfa_offset 8
+  58              		.cfi_offset 4, -8
+  59              		.cfi_offset 14, -4
  383:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_MODE_UNCONFIG_CONST_CFG)
  384:Generated_Source\PSoC4/Serial.c **** #if (!Serial_CY_SCBIP_V1)
  385:Generated_Source\PSoC4/Serial.c ****     if (Serial_SCB_MODE_SPI_RUNTM_CFG)
@@ -453,36 +478,36 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  395:Generated_Source\PSoC4/Serial.c ****         /* Unknown mode: do nothing */
  396:Generated_Source\PSoC4/Serial.c ****     }
  397:Generated_Source\PSoC4/Serial.c **** #endif /* (!Serial_CY_SCBIP_V1) */
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 9
+
+
  398:Generated_Source\PSoC4/Serial.c **** 
  399:Generated_Source\PSoC4/Serial.c **** #elif (Serial_SCB_MODE_SPI_CONST_CFG)
  400:Generated_Source\PSoC4/Serial.c ****     Serial_SpiPostEnable();
  401:Generated_Source\PSoC4/Serial.c **** 
  402:Generated_Source\PSoC4/Serial.c **** #elif (Serial_SCB_MODE_UART_CONST_CFG)
  403:Generated_Source\PSoC4/Serial.c ****     Serial_UartPostEnable();
-  35              		.loc 1 403 0
-  36 0002 FFF7FEFF 		bl	Serial_UartPostEnable
-  37              	.LVL0:
+  60              		.loc 1 403 0
+  61 0002 FFF7FEFF 		bl	Serial_UartPostEnable
+  62              	.LVL1:
  404:Generated_Source\PSoC4/Serial.c **** 
  405:Generated_Source\PSoC4/Serial.c **** #else
  406:Generated_Source\PSoC4/Serial.c ****     /* Unknown mode: do nothing */
  407:Generated_Source\PSoC4/Serial.c **** #endif /* (Serial_SCB_MODE_UNCONFIG_CONST_CFG) */
  408:Generated_Source\PSoC4/Serial.c **** }
-  38              		.loc 1 408 0
-  39              		@ sp needed
-  40 0006 10BD     		pop	{r4, pc}
-  41              		.cfi_endproc
-  42              	.LFE7:
-  43              		.size	Serial_ScbModePostEnable, .-Serial_ScbModePostEnable
-  44              		.section	.text.Serial_ScbModeStop,"ax",%progbits
-  45              		.align	2
-  46              		.code	16
-  47              		.thumb_func
-  48              		.type	Serial_ScbModeStop, %function
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 9
-
-
-  49              	Serial_ScbModeStop:
-  50              	.LFB8:
+  63              		.loc 1 408 0
+  64              		@ sp needed
+  65 0006 10BD     		pop	{r4, pc}
+  66              		.cfi_endproc
+  67              	.LFE8:
+  68              		.size	Serial_ScbModePostEnable, .-Serial_ScbModePostEnable
+  69              		.section	.text.Serial_ScbModeStop,"ax",%progbits
+  70              		.align	2
+  71              		.code	16
+  72              		.thumb_func
+  73              		.type	Serial_ScbModeStop, %function
+  74              	Serial_ScbModeStop:
+  75              	.LFB9:
  409:Generated_Source\PSoC4/Serial.c **** 
  410:Generated_Source\PSoC4/Serial.c **** 
  411:Generated_Source\PSoC4/Serial.c **** /*******************************************************************************
@@ -494,14 +519,14 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  417:Generated_Source\PSoC4/Serial.c **** *******************************************************************************/
  418:Generated_Source\PSoC4/Serial.c **** static void Serial_ScbModeStop(void)
  419:Generated_Source\PSoC4/Serial.c **** {
-  51              		.loc 1 419 0
-  52              		.cfi_startproc
-  53              		@ args = 0, pretend = 0, frame = 0
-  54              		@ frame_needed = 0, uses_anonymous_args = 0
-  55 0000 10B5     		push	{r4, lr}
-  56              		.cfi_def_cfa_offset 8
-  57              		.cfi_offset 4, -8
-  58              		.cfi_offset 14, -4
+  76              		.loc 1 419 0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80 0000 10B5     		push	{r4, lr}
+  81              		.cfi_def_cfa_offset 8
+  82              		.cfi_offset 4, -8
+  83              		.cfi_offset 14, -4
  420:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_MODE_UNCONFIG_CONST_CFG)
  421:Generated_Source\PSoC4/Serial.c ****     if (Serial_SCB_MODE_I2C_RUNTM_CFG)
  422:Generated_Source\PSoC4/Serial.c ****     {
@@ -513,6 +538,9 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  428:Generated_Source\PSoC4/Serial.c ****     }
  429:Generated_Source\PSoC4/Serial.c **** #if (!Serial_CY_SCBIP_V1)
  430:Generated_Source\PSoC4/Serial.c ****     else if (Serial_SCB_MODE_SPI_RUNTM_CFG)
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 10
+
+
  431:Generated_Source\PSoC4/Serial.c ****     {
  432:Generated_Source\PSoC4/Serial.c ****         Serial_SpiStop();
  433:Generated_Source\PSoC4/Serial.c ****     }
@@ -536,61 +564,30 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  451:Generated_Source\PSoC4/Serial.c **** 
  452:Generated_Source\PSoC4/Serial.c **** #elif (Serial_SCB_MODE_UART_CONST_CFG)
  453:Generated_Source\PSoC4/Serial.c ****     Serial_UartStop();
-  59              		.loc 1 453 0
-  60 0002 FFF7FEFF 		bl	Serial_UartStop
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 10
-
-
-  61              	.LVL1:
+  84              		.loc 1 453 0
+  85 0002 FFF7FEFF 		bl	Serial_UartStop
+  86              	.LVL2:
  454:Generated_Source\PSoC4/Serial.c **** 
  455:Generated_Source\PSoC4/Serial.c **** #else
  456:Generated_Source\PSoC4/Serial.c ****     /* Unknown mode: do nothing */
  457:Generated_Source\PSoC4/Serial.c **** #endif /* (Serial_SCB_MODE_UNCONFIG_CONST_CFG) */
  458:Generated_Source\PSoC4/Serial.c **** }
-  62              		.loc 1 458 0
-  63              		@ sp needed
-  64 0006 10BD     		pop	{r4, pc}
-  65              		.cfi_endproc
-  66              	.LFE8:
-  67              		.size	Serial_ScbModeStop, .-Serial_ScbModeStop
-  68              		.section	.text.Serial_Init,"ax",%progbits
-  69              		.align	2
-  70              		.global	Serial_Init
-  71              		.code	16
-  72              		.thumb_func
-  73              		.type	Serial_Init, %function
-  74              	Serial_Init:
-  75              	.LFB0:
- 124:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_MODE_UNCONFIG_CONST_CFG)
-  76              		.loc 1 124 0
-  77              		.cfi_startproc
-  78              		@ args = 0, pretend = 0, frame = 0
-  79              		@ frame_needed = 0, uses_anonymous_args = 0
-  80 0000 10B5     		push	{r4, lr}
-  81              		.cfi_def_cfa_offset 8
-  82              		.cfi_offset 4, -8
-  83              		.cfi_offset 14, -4
- 142:Generated_Source\PSoC4/Serial.c **** 
-  84              		.loc 1 142 0
-  85 0002 FFF7FEFF 		bl	Serial_UartInit
-  86              	.LVL2:
- 148:Generated_Source\PSoC4/Serial.c **** 
-  87              		.loc 1 148 0
+  87              		.loc 1 458 0
   88              		@ sp needed
   89 0006 10BD     		pop	{r4, pc}
   90              		.cfi_endproc
-  91              	.LFE0:
-  92              		.size	Serial_Init, .-Serial_Init
-  93              		.section	.text.Serial_Enable,"ax",%progbits
+  91              	.LFE9:
+  92              		.size	Serial_ScbModeStop, .-Serial_ScbModeStop
+  93              		.section	.text.Serial_Init,"ax",%progbits
   94              		.align	2
-  95              		.global	Serial_Enable
+  95              		.global	Serial_Init
   96              		.code	16
   97              		.thumb_func
-  98              		.type	Serial_Enable, %function
-  99              	Serial_Enable:
- 100              	.LFB1:
- 172:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_MODE_UNCONFIG_CONST_CFG)
- 101              		.loc 1 172 0
+  98              		.type	Serial_Init, %function
+  99              	Serial_Init:
+ 100              	.LFB0:
+ 124:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_MODE_UNCONFIG_CONST_CFG)
+ 101              		.loc 1 124 0
  102              		.cfi_startproc
  103              		@ args = 0, pretend = 0, frame = 0
  104              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -598,234 +595,312 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  106              		.cfi_def_cfa_offset 8
  107              		.cfi_offset 4, -8
  108              		.cfi_offset 14, -4
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 11
+ 142:Generated_Source\PSoC4/Serial.c **** 
+ 109              		.loc 1 142 0
+ 110 0002 FFF7FEFF 		bl	Serial_UartInit
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 11
 
 
+ 111              	.LVL3:
+ 148:Generated_Source\PSoC4/Serial.c **** 
+ 112              		.loc 1 148 0
+ 113              		@ sp needed
+ 114 0006 10BD     		pop	{r4, pc}
+ 115              		.cfi_endproc
+ 116              	.LFE0:
+ 117              		.size	Serial_Init, .-Serial_Init
+ 118              		.section	.text.Serial_Enable,"ax",%progbits
+ 119              		.align	2
+ 120              		.global	Serial_Enable
+ 121              		.code	16
+ 122              		.thumb_func
+ 123              		.type	Serial_Enable, %function
+ 124              	Serial_Enable:
+ 125              	.LFB1:
+ 172:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_MODE_UNCONFIG_CONST_CFG)
+ 126              		.loc 1 172 0
+ 127              		.cfi_startproc
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130 0000 10B5     		push	{r4, lr}
+ 131              		.cfi_def_cfa_offset 8
+ 132              		.cfi_offset 4, -8
+ 133              		.cfi_offset 14, -4
  185:Generated_Source\PSoC4/Serial.c **** 
- 109              		.loc 1 185 0
- 110 0002 044A     		ldr	r2, .L5
- 111 0004 1368     		ldr	r3, [r2]
- 112 0006 8021     		movs	r1, #128
- 113 0008 0906     		lsls	r1, r1, #24
- 114 000a 0B43     		orrs	r3, r1
- 115 000c 1360     		str	r3, [r2]
+ 134              		.loc 1 185 0
+ 135 0002 054A     		ldr	r2, .L6
+ 136 0004 1368     		ldr	r3, [r2]
+ 137 0006 8021     		movs	r1, #128
+ 138 0008 0906     		lsls	r1, r1, #24
+ 139 000a 0B43     		orrs	r3, r1
+ 140 000c 1360     		str	r3, [r2]
+ 187:Generated_Source\PSoC4/Serial.c **** 
+ 141              		.loc 1 187 0
+ 142 000e FFF7FEFF 		bl	Serial_ScbEnableIntr
+ 143              	.LVL4:
  190:Generated_Source\PSoC4/Serial.c **** #endif /* (Serial_SCB_MODE_UNCONFIG_CONST_CFG) */
- 116              		.loc 1 190 0
- 117 000e FFF7FEFF 		bl	Serial_ScbModePostEnable
- 118              	.LVL3:
+ 144              		.loc 1 190 0
+ 145 0012 FFF7FEFF 		bl	Serial_ScbModePostEnable
+ 146              	.LVL5:
  192:Generated_Source\PSoC4/Serial.c **** 
- 119              		.loc 1 192 0
- 120              		@ sp needed
- 121 0012 10BD     		pop	{r4, pc}
- 122              	.L6:
- 123              		.align	2
- 124              	.L5:
- 125 0014 00000740 		.word	1074200576
- 126              		.cfi_endproc
- 127              	.LFE1:
- 128              		.size	Serial_Enable, .-Serial_Enable
- 129              		.section	.text.Serial_Start,"ax",%progbits
- 130              		.align	2
- 131              		.global	Serial_Start
- 132              		.code	16
- 133              		.thumb_func
- 134              		.type	Serial_Start, %function
- 135              	Serial_Start:
- 136              	.LFB2:
+ 147              		.loc 1 192 0
+ 148              		@ sp needed
+ 149 0016 10BD     		pop	{r4, pc}
+ 150              	.L7:
+ 151              		.align	2
+ 152              	.L6:
+ 153 0018 00000740 		.word	1074200576
+ 154              		.cfi_endproc
+ 155              	.LFE1:
+ 156              		.size	Serial_Enable, .-Serial_Enable
+ 157              		.section	.text.Serial_Start,"ax",%progbits
+ 158              		.align	2
+ 159              		.global	Serial_Start
+ 160              		.code	16
+ 161              		.thumb_func
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 12
+
+
+ 162              		.type	Serial_Start, %function
+ 163              	Serial_Start:
+ 164              	.LFB2:
  211:Generated_Source\PSoC4/Serial.c ****     if (0u == Serial_initVar)
- 137              		.loc 1 211 0
- 138              		.cfi_startproc
- 139              		@ args = 0, pretend = 0, frame = 0
- 140              		@ frame_needed = 0, uses_anonymous_args = 0
- 141 0000 10B5     		push	{r4, lr}
- 142              		.cfi_def_cfa_offset 8
- 143              		.cfi_offset 4, -8
- 144              		.cfi_offset 14, -4
+ 165              		.loc 1 211 0
+ 166              		.cfi_startproc
+ 167              		@ args = 0, pretend = 0, frame = 0
+ 168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 169 0000 10B5     		push	{r4, lr}
+ 170              		.cfi_def_cfa_offset 8
+ 171              		.cfi_offset 4, -8
+ 172              		.cfi_offset 14, -4
  212:Generated_Source\PSoC4/Serial.c ****     {
- 145              		.loc 1 212 0
- 146 0002 064B     		ldr	r3, .L9
- 147 0004 1B78     		ldrb	r3, [r3]
- 148 0006 002B     		cmp	r3, #0
- 149 0008 04D1     		bne	.L8
+ 173              		.loc 1 212 0
+ 174 0002 064B     		ldr	r3, .L10
+ 175 0004 1B78     		ldrb	r3, [r3]
+ 176 0006 002B     		cmp	r3, #0
+ 177 0008 04D1     		bne	.L9
  214:Generated_Source\PSoC4/Serial.c ****         Serial_initVar = 1u; /* Component was initialized */
- 150              		.loc 1 214 0
- 151 000a FFF7FEFF 		bl	Serial_Init
- 152              	.LVL4:
+ 178              		.loc 1 214 0
+ 179 000a FFF7FEFF 		bl	Serial_Init
+ 180              	.LVL6:
  215:Generated_Source\PSoC4/Serial.c ****     }
- 153              		.loc 1 215 0
- 154 000e 0122     		movs	r2, #1
- 155 0010 024B     		ldr	r3, .L9
- 156 0012 1A70     		strb	r2, [r3]
- 157              	.L8:
+ 181              		.loc 1 215 0
+ 182 000e 0122     		movs	r2, #1
+ 183 0010 024B     		ldr	r3, .L10
+ 184 0012 1A70     		strb	r2, [r3]
+ 185              	.L9:
  218:Generated_Source\PSoC4/Serial.c **** }
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 12
-
-
- 158              		.loc 1 218 0
- 159 0014 FFF7FEFF 		bl	Serial_Enable
- 160              	.LVL5:
+ 186              		.loc 1 218 0
+ 187 0014 FFF7FEFF 		bl	Serial_Enable
+ 188              	.LVL7:
  219:Generated_Source\PSoC4/Serial.c **** 
- 161              		.loc 1 219 0
- 162              		@ sp needed
- 163 0018 10BD     		pop	{r4, pc}
- 164              	.L10:
- 165 001a C046     		.align	2
- 166              	.L9:
- 167 001c 00000000 		.word	.LANCHOR0
- 168              		.cfi_endproc
- 169              	.LFE2:
- 170              		.size	Serial_Start, .-Serial_Start
- 171              		.section	.text.Serial_Stop,"ax",%progbits
- 172              		.align	2
- 173              		.global	Serial_Stop
- 174              		.code	16
- 175              		.thumb_func
- 176              		.type	Serial_Stop, %function
- 177              	Serial_Stop:
- 178              	.LFB3:
+ 189              		.loc 1 219 0
+ 190              		@ sp needed
+ 191 0018 10BD     		pop	{r4, pc}
+ 192              	.L11:
+ 193 001a C046     		.align	2
+ 194              	.L10:
+ 195 001c 00000000 		.word	.LANCHOR0
+ 196              		.cfi_endproc
+ 197              	.LFE2:
+ 198              		.size	Serial_Start, .-Serial_Start
+ 199              		.section	.text.Serial_Stop,"ax",%progbits
+ 200              		.align	2
+ 201              		.global	Serial_Stop
+ 202              		.code	16
+ 203              		.thumb_func
+ 204              		.type	Serial_Stop, %function
+ 205              	Serial_Stop:
+ 206              	.LFB3:
  240:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_IRQ_INTERNAL)
- 179              		.loc 1 240 0
- 180              		.cfi_startproc
- 181              		@ args = 0, pretend = 0, frame = 0
- 182              		@ frame_needed = 0, uses_anonymous_args = 0
- 183 0000 10B5     		push	{r4, lr}
- 184              		.cfi_def_cfa_offset 8
- 185              		.cfi_offset 4, -8
- 186              		.cfi_offset 14, -4
+ 207              		.loc 1 240 0
+ 208              		.cfi_startproc
+ 209              		@ args = 0, pretend = 0, frame = 0
+ 210              		@ frame_needed = 0, uses_anonymous_args = 0
+ 211 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 13
+
+
+ 212              		.cfi_def_cfa_offset 8
+ 213              		.cfi_offset 4, -8
+ 214              		.cfi_offset 14, -4
+ 242:Generated_Source\PSoC4/Serial.c **** #endif /* (Serial_SCB_IRQ_INTERNAL) */
+ 215              		.loc 1 242 0
+ 216 0002 0B20     		movs	r0, #11
+ 217 0004 FFF7FEFF 		bl	CyIntDisable
+ 218              	.LVL8:
  246:Generated_Source\PSoC4/Serial.c **** 
- 187              		.loc 1 246 0
- 188 0002 FFF7FEFF 		bl	Serial_ScbModeStop
- 189              	.LVL6:
+ 219              		.loc 1 246 0
+ 220 0008 FFF7FEFF 		bl	Serial_ScbModeStop
+ 221              	.LVL9:
  249:Generated_Source\PSoC4/Serial.c **** 
- 190              		.loc 1 249 0
- 191 0006 044A     		ldr	r2, .L12
- 192 0008 1368     		ldr	r3, [r2]
- 193 000a 5B00     		lsls	r3, r3, #1
- 194 000c 5B08     		lsrs	r3, r3, #1
- 195 000e 1360     		str	r3, [r2]
+ 222              		.loc 1 249 0
+ 223 000c 054A     		ldr	r2, .L13
+ 224 000e 1368     		ldr	r3, [r2]
+ 225 0010 5B00     		lsls	r3, r3, #1
+ 226 0012 5B08     		lsrs	r3, r3, #1
+ 227 0014 1360     		str	r3, [r2]
  259:Generated_Source\PSoC4/Serial.c **** 
- 196              		.loc 1 259 0
- 197 0010 0022     		movs	r2, #0
- 198 0012 024B     		ldr	r3, .L12+4
- 199 0014 1A60     		str	r2, [r3]
- 264:Generated_Source\PSoC4/Serial.c **** 
- 200              		.loc 1 264 0
- 201              		@ sp needed
- 202 0016 10BD     		pop	{r4, pc}
- 203              	.L13:
- 204              		.align	2
- 205              	.L12:
- 206 0018 00000740 		.word	1074200576
- 207 001c 880F0740 		.word	1074204552
- 208              		.cfi_endproc
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 13
-
-
- 209              	.LFE3:
- 210              		.size	Serial_Stop, .-Serial_Stop
- 211              		.section	.text.Serial_SetRxFifoLevel,"ax",%progbits
- 212              		.align	2
- 213              		.global	Serial_SetRxFifoLevel
- 214              		.code	16
- 215              		.thumb_func
- 216              		.type	Serial_SetRxFifoLevel, %function
- 217              	Serial_SetRxFifoLevel:
- 218              	.LFB4:
- 280:Generated_Source\PSoC4/Serial.c ****     uint32 rxFifoCtrl;
- 219              		.loc 1 280 0
- 220              		.cfi_startproc
- 221              		@ args = 0, pretend = 0, frame = 0
- 222              		@ frame_needed = 0, uses_anonymous_args = 0
- 223              		@ link register save eliminated.
- 224              	.LVL7:
- 283:Generated_Source\PSoC4/Serial.c **** 
- 225              		.loc 1 283 0
- 226 0000 034A     		ldr	r2, .L15
- 227 0002 1368     		ldr	r3, [r2]
- 228              	.LVL8:
- 285:Generated_Source\PSoC4/Serial.c ****     rxFifoCtrl |= ((uint32) (Serial_RX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
- 229              		.loc 1 285 0
- 230 0004 0721     		movs	r1, #7
- 231 0006 8B43     		bics	r3, r1
- 232              	.LVL9:
- 286:Generated_Source\PSoC4/Serial.c **** 
- 233              		.loc 1 286 0
- 234 0008 0840     		ands	r0, r1
+ 228              		.loc 1 259 0
+ 229 0016 0022     		movs	r2, #0
+ 230 0018 034B     		ldr	r3, .L13+4
+ 231 001a 1A60     		str	r2, [r3]
+ 262:Generated_Source\PSoC4/Serial.c **** #endif /* (Serial_SCB_IRQ_INTERNAL) */
+ 232              		.loc 1 262 0
+ 233 001c 0B20     		movs	r0, #11
+ 234 001e FFF7FEFF 		bl	CyIntClearPending
  235              	.LVL10:
- 236 000a 1843     		orrs	r0, r3
- 237              	.LVL11:
- 288:Generated_Source\PSoC4/Serial.c **** }
- 238              		.loc 1 288 0
- 239 000c 1060     		str	r0, [r2]
- 289:Generated_Source\PSoC4/Serial.c **** 
- 240              		.loc 1 289 0
- 241              		@ sp needed
- 242 000e 7047     		bx	lr
- 243              	.L16:
- 244              		.align	2
- 245              	.L15:
- 246 0010 04030740 		.word	1074201348
- 247              		.cfi_endproc
- 248              	.LFE4:
- 249              		.size	Serial_SetRxFifoLevel, .-Serial_SetRxFifoLevel
- 250              		.section	.text.Serial_SetTxFifoLevel,"ax",%progbits
- 251              		.align	2
- 252              		.global	Serial_SetTxFifoLevel
- 253              		.code	16
- 254              		.thumb_func
- 255              		.type	Serial_SetTxFifoLevel, %function
- 256              	Serial_SetTxFifoLevel:
- 257              	.LFB5:
- 305:Generated_Source\PSoC4/Serial.c ****     uint32 txFifoCtrl;
- 258              		.loc 1 305 0
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 14
+ 264:Generated_Source\PSoC4/Serial.c **** 
+ 236              		.loc 1 264 0
+ 237              		@ sp needed
+ 238 0022 10BD     		pop	{r4, pc}
+ 239              	.L14:
+ 240              		.align	2
+ 241              	.L13:
+ 242 0024 00000740 		.word	1074200576
+ 243 0028 880F0740 		.word	1074204552
+ 244              		.cfi_endproc
+ 245              	.LFE3:
+ 246              		.size	Serial_Stop, .-Serial_Stop
+ 247              		.section	.text.Serial_SetRxFifoLevel,"ax",%progbits
+ 248              		.align	2
+ 249              		.global	Serial_SetRxFifoLevel
+ 250              		.code	16
+ 251              		.thumb_func
+ 252              		.type	Serial_SetRxFifoLevel, %function
+ 253              	Serial_SetRxFifoLevel:
+ 254              	.LFB4:
+ 280:Generated_Source\PSoC4/Serial.c ****     uint32 rxFifoCtrl;
+ 255              		.loc 1 280 0
+ 256              		.cfi_startproc
+ 257              		@ args = 0, pretend = 0, frame = 0
+ 258              		@ frame_needed = 0, uses_anonymous_args = 0
+ 259              		@ link register save eliminated.
+ 260              	.LVL11:
+ 283:Generated_Source\PSoC4/Serial.c **** 
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 14
 
 
- 259              		.cfi_startproc
- 260              		@ args = 0, pretend = 0, frame = 0
- 261              		@ frame_needed = 0, uses_anonymous_args = 0
- 262              		@ link register save eliminated.
- 263              	.LVL12:
- 308:Generated_Source\PSoC4/Serial.c **** 
- 264              		.loc 1 308 0
- 265 0000 034A     		ldr	r2, .L18
- 266 0002 1368     		ldr	r3, [r2]
- 267              	.LVL13:
- 310:Generated_Source\PSoC4/Serial.c ****     txFifoCtrl |= ((uint32) (Serial_TX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
- 268              		.loc 1 310 0
- 269 0004 0721     		movs	r1, #7
- 270 0006 8B43     		bics	r3, r1
+ 261              		.loc 1 283 0
+ 262 0000 034A     		ldr	r2, .L16
+ 263 0002 1368     		ldr	r3, [r2]
+ 264              	.LVL12:
+ 285:Generated_Source\PSoC4/Serial.c ****     rxFifoCtrl |= ((uint32) (Serial_RX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
+ 265              		.loc 1 285 0
+ 266 0004 0721     		movs	r1, #7
+ 267 0006 8B43     		bics	r3, r1
+ 268              	.LVL13:
+ 286:Generated_Source\PSoC4/Serial.c **** 
+ 269              		.loc 1 286 0
+ 270 0008 0840     		ands	r0, r1
  271              	.LVL14:
+ 272 000a 1843     		orrs	r0, r3
+ 273              	.LVL15:
+ 288:Generated_Source\PSoC4/Serial.c **** }
+ 274              		.loc 1 288 0
+ 275 000c 1060     		str	r0, [r2]
+ 289:Generated_Source\PSoC4/Serial.c **** 
+ 276              		.loc 1 289 0
+ 277              		@ sp needed
+ 278 000e 7047     		bx	lr
+ 279              	.L17:
+ 280              		.align	2
+ 281              	.L16:
+ 282 0010 04030740 		.word	1074201348
+ 283              		.cfi_endproc
+ 284              	.LFE4:
+ 285              		.size	Serial_SetRxFifoLevel, .-Serial_SetRxFifoLevel
+ 286              		.section	.text.Serial_SetTxFifoLevel,"ax",%progbits
+ 287              		.align	2
+ 288              		.global	Serial_SetTxFifoLevel
+ 289              		.code	16
+ 290              		.thumb_func
+ 291              		.type	Serial_SetTxFifoLevel, %function
+ 292              	Serial_SetTxFifoLevel:
+ 293              	.LFB5:
+ 305:Generated_Source\PSoC4/Serial.c ****     uint32 txFifoCtrl;
+ 294              		.loc 1 305 0
+ 295              		.cfi_startproc
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298              		@ link register save eliminated.
+ 299              	.LVL16:
+ 308:Generated_Source\PSoC4/Serial.c **** 
+ 300              		.loc 1 308 0
+ 301 0000 034A     		ldr	r2, .L19
+ 302 0002 1368     		ldr	r3, [r2]
+ 303              	.LVL17:
+ 310:Generated_Source\PSoC4/Serial.c ****     txFifoCtrl |= ((uint32) (Serial_TX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
+ 304              		.loc 1 310 0
+ 305 0004 0721     		movs	r1, #7
+ 306 0006 8B43     		bics	r3, r1
+ 307              	.LVL18:
  311:Generated_Source\PSoC4/Serial.c **** 
- 272              		.loc 1 311 0
- 273 0008 0840     		ands	r0, r1
- 274              	.LVL15:
- 275 000a 1843     		orrs	r0, r3
- 276              	.LVL16:
+ 308              		.loc 1 311 0
+ 309 0008 0840     		ands	r0, r1
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 15
+
+
+ 310              	.LVL19:
+ 311 000a 1843     		orrs	r0, r3
+ 312              	.LVL20:
  313:Generated_Source\PSoC4/Serial.c **** }
- 277              		.loc 1 313 0
- 278 000c 1060     		str	r0, [r2]
+ 313              		.loc 1 313 0
+ 314 000c 1060     		str	r0, [r2]
  314:Generated_Source\PSoC4/Serial.c **** 
- 279              		.loc 1 314 0
- 280              		@ sp needed
- 281 000e 7047     		bx	lr
- 282              	.L19:
- 283              		.align	2
- 284              	.L18:
- 285 0010 04020740 		.word	1074201092
- 286              		.cfi_endproc
- 287              	.LFE5:
- 288              		.size	Serial_SetTxFifoLevel, .-Serial_SetTxFifoLevel
- 289              		.section	.text.Serial_I2CSlaveNackGeneration,"ax",%progbits
- 290              		.align	2
- 291              		.global	Serial_I2CSlaveNackGeneration
- 292              		.code	16
- 293              		.thumb_func
- 294              		.type	Serial_I2CSlaveNackGeneration, %function
- 295              	Serial_I2CSlaveNackGeneration:
- 296              	.LFB9:
+ 315              		.loc 1 314 0
+ 316              		@ sp needed
+ 317 000e 7047     		bx	lr
+ 318              	.L20:
+ 319              		.align	2
+ 320              	.L19:
+ 321 0010 04020740 		.word	1074201092
+ 322              		.cfi_endproc
+ 323              	.LFE5:
+ 324              		.size	Serial_SetTxFifoLevel, .-Serial_SetTxFifoLevel
+ 325              		.section	.text.Serial_SetCustomInterruptHandler,"ax",%progbits
+ 326              		.align	2
+ 327              		.global	Serial_SetCustomInterruptHandler
+ 328              		.code	16
+ 329              		.thumb_func
+ 330              		.type	Serial_SetCustomInterruptHandler, %function
+ 331              	Serial_SetCustomInterruptHandler:
+ 332              	.LFB6:
+ 336:Generated_Source\PSoC4/Serial.c ****     #if !defined (CY_REMOVE_Serial_CUSTOM_INTR_HANDLER)
+ 333              		.loc 1 336 0
+ 334              		.cfi_startproc
+ 335              		@ args = 0, pretend = 0, frame = 0
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337              		@ link register save eliminated.
+ 338              	.LVL21:
+ 338:Generated_Source\PSoC4/Serial.c ****     #else
+ 339              		.loc 1 338 0
+ 340 0000 014B     		ldr	r3, .L22
+ 341 0002 5860     		str	r0, [r3, #4]
+ 345:Generated_Source\PSoC4/Serial.c **** #endif /* (Serial_SCB_IRQ_INTERNAL) */
+ 342              		.loc 1 345 0
+ 343              		@ sp needed
+ 344 0004 7047     		bx	lr
+ 345              	.L23:
+ 346 0006 C046     		.align	2
+ 347              	.L22:
+ 348 0008 00000000 		.word	.LANCHOR0
+ 349              		.cfi_endproc
+ 350              	.LFE6:
+ 351              		.size	Serial_SetCustomInterruptHandler, .-Serial_SetCustomInterruptHandler
+ 352              		.section	.text.Serial_I2CSlaveNackGeneration,"ax",%progbits
+ 353              		.align	2
+ 354              		.global	Serial_I2CSlaveNackGeneration
+ 355              		.code	16
+ 356              		.thumb_func
+ 357              		.type	Serial_I2CSlaveNackGeneration, %function
+ 358              	Serial_I2CSlaveNackGeneration:
+ 359              	.LFB10:
  459:Generated_Source\PSoC4/Serial.c **** 
  460:Generated_Source\PSoC4/Serial.c **** 
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 16
+
+
  461:Generated_Source\PSoC4/Serial.c **** #if (Serial_SCB_MODE_UNCONFIG_CONST_CFG)
  462:Generated_Source\PSoC4/Serial.c ****     /*******************************************************************************
  463:Generated_Source\PSoC4/Serial.c ****     * Function Name: Serial_SetPins
@@ -838,9 +913,6 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  470:Generated_Source\PSoC4/Serial.c ****     *  is selected in design time.
  471:Generated_Source\PSoC4/Serial.c ****     *
  472:Generated_Source\PSoC4/Serial.c ****     *  \param mode:      Mode of SCB operation.
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 15
-
-
  473:Generated_Source\PSoC4/Serial.c ****     *  \param subMode:   Sub-mode of SCB operation. It is only required for SPI and UART
  474:Generated_Source\PSoC4/Serial.c ****     *             modes.
  475:Generated_Source\PSoC4/Serial.c ****     *  \param uartEnableMask: enables TX or RX direction and RTS and CTS signals.
@@ -886,6 +958,9 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  515:Generated_Source\PSoC4/Serial.c ****             hsiomSel[Serial_RX_SCL_MOSI_PIN_INDEX] = Serial_RX_SCL_MOSI_HSIOM_SEL_I2C;
  516:Generated_Source\PSoC4/Serial.c ****             pinsDm  [Serial_RX_SCL_MOSI_PIN_INDEX] = Serial_PIN_DM_OD_LO;
  517:Generated_Source\PSoC4/Serial.c ****         #elif (Serial_RX_WAKE_SCL_MOSI_PIN)
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 17
+
+
  518:Generated_Source\PSoC4/Serial.c ****             hsiomSel[Serial_RX_WAKE_SCL_MOSI_PIN_INDEX] = Serial_RX_WAKE_SCL_MOSI_HSIOM_SEL_I2C;
  519:Generated_Source\PSoC4/Serial.c ****             pinsDm  [Serial_RX_WAKE_SCL_MOSI_PIN_INDEX] = Serial_PIN_DM_OD_LO;
  520:Generated_Source\PSoC4/Serial.c ****         #else
@@ -898,9 +973,6 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  527:Generated_Source\PSoC4/Serial.c ****         }
  528:Generated_Source\PSoC4/Serial.c ****     #if (!Serial_CY_SCBIP_V1)
  529:Generated_Source\PSoC4/Serial.c ****         else if (Serial_SCB_MODE_SPI == mode)
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 16
-
-
  530:Generated_Source\PSoC4/Serial.c ****         {
  531:Generated_Source\PSoC4/Serial.c ****         #if (Serial_RX_SCL_MOSI_PIN)
  532:Generated_Source\PSoC4/Serial.c ****             hsiomSel[Serial_RX_SCL_MOSI_PIN_INDEX] = Serial_RX_SCL_MOSI_HSIOM_SEL_SPI;
@@ -946,6 +1018,9 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  572:Generated_Source\PSoC4/Serial.c ****                 hsiomSel [Serial_SS0_PIN_INDEX] = Serial_SS0_HSIOM_SEL_SPI;
  573:Generated_Source\PSoC4/Serial.c ****                 pinsDm   [Serial_SS0_PIN_INDEX] = Serial_PIN_DM_STRONG;
  574:Generated_Source\PSoC4/Serial.c ****                 pinsInBuf |= Serial_SS0_PIN_MASK;
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 18
+
+
  575:Generated_Source\PSoC4/Serial.c ****             #endif /* (Serial_SS0_PIN) */
  576:Generated_Source\PSoC4/Serial.c **** 
  577:Generated_Source\PSoC4/Serial.c ****             #if (Serial_SS1_PIN)
@@ -958,9 +1033,6 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  584:Generated_Source\PSoC4/Serial.c ****                 hsiomSel [Serial_SS2_PIN_INDEX] = Serial_SS2_HSIOM_SEL_SPI;
  585:Generated_Source\PSoC4/Serial.c ****                 pinsDm   [Serial_SS2_PIN_INDEX] = Serial_PIN_DM_STRONG;
  586:Generated_Source\PSoC4/Serial.c ****                 pinsInBuf |= Serial_SS2_PIN_MASK;
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 17
-
-
  587:Generated_Source\PSoC4/Serial.c ****             #endif /* (Serial_SS2_PIN) */
  588:Generated_Source\PSoC4/Serial.c **** 
  589:Generated_Source\PSoC4/Serial.c ****             #if (Serial_SS3_PIN)
@@ -1006,6 +1078,9 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  629:Generated_Source\PSoC4/Serial.c ****                 #endif /* (Serial_RX_SCL_MOSI_PIN) */
  630:Generated_Source\PSoC4/Serial.c ****                 }
  631:Generated_Source\PSoC4/Serial.c **** 
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 19
+
+
  632:Generated_Source\PSoC4/Serial.c ****                 if (0u != (Serial_UART_TX_PIN_ENABLE & uartEnableMask))
  633:Generated_Source\PSoC4/Serial.c ****                 {
  634:Generated_Source\PSoC4/Serial.c ****                 #if (Serial_TX_SDA_MISO_PIN)
@@ -1018,9 +1093,6 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  641:Generated_Source\PSoC4/Serial.c ****                 }
  642:Generated_Source\PSoC4/Serial.c **** 
  643:Generated_Source\PSoC4/Serial.c ****             #if !(Serial_CY_SCBIP_V0 || Serial_CY_SCBIP_V1)
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 18
-
-
  644:Generated_Source\PSoC4/Serial.c ****                 if (Serial_UART_MODE_STD == subMode)
  645:Generated_Source\PSoC4/Serial.c ****                 {
  646:Generated_Source\PSoC4/Serial.c ****                     if (0u != (Serial_UART_CTS_PIN_ENABLE & uartEnableMask))
@@ -1066,6 +1138,9 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  686:Generated_Source\PSoC4/Serial.c ****                                          (0u != (pinsInBuf & Serial_RX_SCL_MOSI_PIN_MASK)));
  687:Generated_Source\PSoC4/Serial.c ****         #endif /* (!Serial_CY_SCBIP_V1) */
  688:Generated_Source\PSoC4/Serial.c ****     
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 20
+
+
  689:Generated_Source\PSoC4/Serial.c ****     #elif (Serial_RX_WAKE_SCL_MOSI_PIN)
  690:Generated_Source\PSoC4/Serial.c ****         Serial_SET_HSIOM_SEL(Serial_RX_WAKE_SCL_MOSI_HSIOM_REG,
  691:Generated_Source\PSoC4/Serial.c ****                                        Serial_RX_WAKE_SCL_MOSI_HSIOM_MASK,
@@ -1078,9 +1153,6 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  698:Generated_Source\PSoC4/Serial.c ****         Serial_SET_INP_DIS(Serial_uart_rx_wake_i2c_scl_spi_mosi_INP_DIS,
  699:Generated_Source\PSoC4/Serial.c ****                                      Serial_uart_rx_wake_i2c_scl_spi_mosi_MASK,
  700:Generated_Source\PSoC4/Serial.c ****                                      (0u != (pinsInBuf & Serial_RX_WAKE_SCL_MOSI_PIN_MASK)));
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 19
-
-
  701:Generated_Source\PSoC4/Serial.c **** 
  702:Generated_Source\PSoC4/Serial.c ****          /* Set interrupt on falling edge */
  703:Generated_Source\PSoC4/Serial.c ****         Serial_SET_INCFG_TYPE(Serial_RX_WAKE_SCL_MOSI_INTCFG_REG,
@@ -1126,6 +1198,9 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  743:Generated_Source\PSoC4/Serial.c **** 
  744:Generated_Source\PSoC4/Serial.c ****         Serial_spi_ss0_SetDriveMode((uint8) pinsDm[Serial_SS0_PIN_INDEX]);
  745:Generated_Source\PSoC4/Serial.c **** 
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 21
+
+
  746:Generated_Source\PSoC4/Serial.c ****         Serial_SET_INP_DIS(Serial_spi_ss0_INP_DIS,
  747:Generated_Source\PSoC4/Serial.c ****                                      Serial_spi_ss0_MASK,
  748:Generated_Source\PSoC4/Serial.c ****                                      (0u != (pinsInBuf & Serial_SS0_PIN_MASK)));
@@ -1138,9 +1213,6 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  755:Generated_Source\PSoC4/Serial.c ****                                        hsiomSel[Serial_SS1_PIN_INDEX]);
  756:Generated_Source\PSoC4/Serial.c **** 
  757:Generated_Source\PSoC4/Serial.c ****         Serial_spi_ss1_SetDriveMode((uint8) pinsDm[Serial_SS1_PIN_INDEX]);
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 20
-
-
  758:Generated_Source\PSoC4/Serial.c **** 
  759:Generated_Source\PSoC4/Serial.c ****         Serial_SET_INP_DIS(Serial_spi_ss1_INP_DIS,
  760:Generated_Source\PSoC4/Serial.c ****                                      Serial_spi_ss1_MASK,
@@ -1186,924 +1258,1128 @@ ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 1
  800:Generated_Source\PSoC4/Serial.c ****     *
  801:Generated_Source\PSoC4/Serial.c ****     *******************************************************************************/
  802:Generated_Source\PSoC4/Serial.c ****     void Serial_I2CSlaveNackGeneration(void)
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 22
+
+
  803:Generated_Source\PSoC4/Serial.c ****     {
- 297              		.loc 1 803 0
- 298              		.cfi_startproc
- 299              		@ args = 0, pretend = 0, frame = 0
- 300              		@ frame_needed = 0, uses_anonymous_args = 0
- 301              		@ link register save eliminated.
+ 360              		.loc 1 803 0
+ 361              		.cfi_startproc
+ 362              		@ args = 0, pretend = 0, frame = 0
+ 363              		@ frame_needed = 0, uses_anonymous_args = 0
+ 364              		@ link register save eliminated.
  804:Generated_Source\PSoC4/Serial.c ****         /* Check for EC_AM toggle condition: EC_AM and clock stretching for address are enabled */
  805:Generated_Source\PSoC4/Serial.c ****         if ((0u != (Serial_CTRL_REG & Serial_CTRL_EC_AM_MODE)) &&
- 302              		.loc 1 805 0
- 303 0000 0A4B     		ldr	r3, .L22
- 304 0002 1B68     		ldr	r3, [r3]
- 305 0004 DB05     		lsls	r3, r3, #23
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 21
-
-
- 306 0006 0DD5     		bpl	.L21
+ 365              		.loc 1 805 0
+ 366 0000 0A4B     		ldr	r3, .L26
+ 367 0002 1B68     		ldr	r3, [r3]
+ 368 0004 DB05     		lsls	r3, r3, #23
+ 369 0006 0DD5     		bpl	.L25
  806:Generated_Source\PSoC4/Serial.c ****             (0u == (Serial_I2C_CTRL_REG & Serial_I2C_CTRL_S_NOT_READY_ADDR_NACK)))
- 307              		.loc 1 806 0 discriminator 1
- 308 0008 094B     		ldr	r3, .L22+4
- 309 000a 1B68     		ldr	r3, [r3]
+ 370              		.loc 1 806 0 discriminator 1
+ 371 0008 094B     		ldr	r3, .L26+4
+ 372 000a 1B68     		ldr	r3, [r3]
  805:Generated_Source\PSoC4/Serial.c ****             (0u == (Serial_I2C_CTRL_REG & Serial_I2C_CTRL_S_NOT_READY_ADDR_NACK)))
- 310              		.loc 1 805 0 discriminator 1
- 311 000c 5B04     		lsls	r3, r3, #17
- 312 000e 09D4     		bmi	.L21
+ 373              		.loc 1 805 0 discriminator 1
+ 374 000c 5B04     		lsls	r3, r3, #17
+ 375 000e 09D4     		bmi	.L25
  807:Generated_Source\PSoC4/Serial.c ****         {
  808:Generated_Source\PSoC4/Serial.c ****             /* Toggle EC_AM before NACK generation */
  809:Generated_Source\PSoC4/Serial.c ****             Serial_CTRL_REG &= ~Serial_CTRL_EC_AM_MODE;
- 313              		.loc 1 809 0
- 314 0010 064B     		ldr	r3, .L22
- 315 0012 1968     		ldr	r1, [r3]
- 316 0014 074A     		ldr	r2, .L22+8
- 317 0016 0A40     		ands	r2, r1
- 318 0018 1A60     		str	r2, [r3]
+ 376              		.loc 1 809 0
+ 377 0010 064B     		ldr	r3, .L26
+ 378 0012 1968     		ldr	r1, [r3]
+ 379 0014 074A     		ldr	r2, .L26+8
+ 380 0016 0A40     		ands	r2, r1
+ 381 0018 1A60     		str	r2, [r3]
  810:Generated_Source\PSoC4/Serial.c ****             Serial_CTRL_REG |=  Serial_CTRL_EC_AM_MODE;
- 319              		.loc 1 810 0
- 320 001a 1A68     		ldr	r2, [r3]
- 321 001c 8021     		movs	r1, #128
- 322 001e 4900     		lsls	r1, r1, #1
- 323 0020 0A43     		orrs	r2, r1
- 324 0022 1A60     		str	r2, [r3]
- 325              	.L21:
+ 382              		.loc 1 810 0
+ 383 001a 1A68     		ldr	r2, [r3]
+ 384 001c 8021     		movs	r1, #128
+ 385 001e 4900     		lsls	r1, r1, #1
+ 386 0020 0A43     		orrs	r2, r1
+ 387 0022 1A60     		str	r2, [r3]
+ 388              	.L25:
  811:Generated_Source\PSoC4/Serial.c ****         }
  812:Generated_Source\PSoC4/Serial.c **** 
  813:Generated_Source\PSoC4/Serial.c ****         Serial_I2C_SLAVE_CMD_REG = Serial_I2C_SLAVE_CMD_S_NACK;
- 326              		.loc 1 813 0
- 327 0024 0222     		movs	r2, #2
- 328 0026 044B     		ldr	r3, .L22+12
- 329 0028 1A60     		str	r2, [r3]
+ 389              		.loc 1 813 0
+ 390 0024 0222     		movs	r2, #2
+ 391 0026 044B     		ldr	r3, .L26+12
+ 392 0028 1A60     		str	r2, [r3]
  814:Generated_Source\PSoC4/Serial.c ****     }
- 330              		.loc 1 814 0
- 331              		@ sp needed
- 332 002a 7047     		bx	lr
- 333              	.L23:
- 334              		.align	2
- 335              	.L22:
- 336 002c 00000740 		.word	1074200576
- 337 0030 60000740 		.word	1074200672
- 338 0034 FFFEFFFF 		.word	-257
- 339 0038 6C000740 		.word	1074200684
- 340              		.cfi_endproc
- 341              	.LFE9:
- 342              		.size	Serial_I2CSlaveNackGeneration, .-Serial_I2CSlaveNackGeneration
- 343              		.global	Serial_IntrTxMask
- 344              		.global	Serial_initVar
- 345              		.bss
- 346              		.align	1
- 347              		.set	.LANCHOR0,. + 0
- 348              		.type	Serial_initVar, %object
- 349              		.size	Serial_initVar, 1
- 350              	Serial_initVar:
- 351 0000 00       		.space	1
- 352 0001 00       		.space	1
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 22
+ 393              		.loc 1 814 0
+ 394              		@ sp needed
+ 395 002a 7047     		bx	lr
+ 396              	.L27:
+ 397              		.align	2
+ 398              	.L26:
+ 399 002c 00000740 		.word	1074200576
+ 400 0030 60000740 		.word	1074200672
+ 401 0034 FFFEFFFF 		.word	-257
+ 402 0038 6C000740 		.word	1074200684
+ 403              		.cfi_endproc
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 23
 
 
- 353              		.type	Serial_IntrTxMask, %object
- 354              		.size	Serial_IntrTxMask, 2
- 355              	Serial_IntrTxMask:
- 356 0002 0000     		.space	2
- 357              		.text
- 358              	.Letext0:
- 359              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
- 360              		.file 3 "Generated_Source\\PSoC4\\Serial_SPI_UART_PVT.h"
- 361              		.section	.debug_info,"",%progbits
- 362              	.Ldebug_info0:
- 363 0000 48020000 		.4byte	0x248
- 364 0004 0400     		.2byte	0x4
- 365 0006 00000000 		.4byte	.Ldebug_abbrev0
- 366 000a 04       		.byte	0x4
- 367 000b 01       		.uleb128 0x1
- 368 000c 98010000 		.4byte	.LASF34
- 369 0010 0C       		.byte	0xc
- 370 0011 5F000000 		.4byte	.LASF35
- 371 0015 DF000000 		.4byte	.LASF36
- 372 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 373 001d 00000000 		.4byte	0
- 374 0021 00000000 		.4byte	.Ldebug_line0
- 375 0025 02       		.uleb128 0x2
- 376 0026 01       		.byte	0x1
- 377 0027 06       		.byte	0x6
- 378 0028 BF020000 		.4byte	.LASF0
- 379 002c 02       		.uleb128 0x2
- 380 002d 01       		.byte	0x1
- 381 002e 08       		.byte	0x8
- 382 002f AB000000 		.4byte	.LASF1
- 383 0033 02       		.uleb128 0x2
- 384 0034 02       		.byte	0x2
- 385 0035 05       		.byte	0x5
- 386 0036 5D020000 		.4byte	.LASF2
- 387 003a 02       		.uleb128 0x2
- 388 003b 02       		.byte	0x2
- 389 003c 07       		.byte	0x7
- 390 003d 4C000000 		.4byte	.LASF3
- 391 0041 02       		.uleb128 0x2
- 392 0042 04       		.byte	0x4
- 393 0043 05       		.byte	0x5
- 394 0044 AA020000 		.4byte	.LASF4
- 395 0048 02       		.uleb128 0x2
- 396 0049 04       		.byte	0x4
- 397 004a 07       		.byte	0x7
- 398 004b B9000000 		.4byte	.LASF5
- 399 004f 02       		.uleb128 0x2
- 400 0050 08       		.byte	0x8
- 401 0051 05       		.byte	0x5
- 402 0052 4A020000 		.4byte	.LASF6
- 403 0056 02       		.uleb128 0x2
- 404 0057 08       		.byte	0x8
- 405 0058 07       		.byte	0x7
- 406 0059 81010000 		.4byte	.LASF7
- 407 005d 03       		.uleb128 0x3
- 408 005e 04       		.byte	0x4
- 409 005f 05       		.byte	0x5
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 23
+ 404              	.LFE10:
+ 405              		.size	Serial_I2CSlaveNackGeneration, .-Serial_I2CSlaveNackGeneration
+ 406              		.global	Serial_customIntrHandler
+ 407              		.global	Serial_IntrTxMask
+ 408              		.global	Serial_initVar
+ 409              		.bss
+ 410              		.align	2
+ 411              		.set	.LANCHOR0,. + 0
+ 412              		.type	Serial_initVar, %object
+ 413              		.size	Serial_initVar, 1
+ 414              	Serial_initVar:
+ 415 0000 00       		.space	1
+ 416 0001 000000   		.space	3
+ 417              		.type	Serial_customIntrHandler, %object
+ 418              		.size	Serial_customIntrHandler, 4
+ 419              	Serial_customIntrHandler:
+ 420 0004 00000000 		.space	4
+ 421              		.type	Serial_IntrTxMask, %object
+ 422              		.size	Serial_IntrTxMask, 2
+ 423              	Serial_IntrTxMask:
+ 424 0008 0000     		.space	2
+ 425              		.text
+ 426              	.Letext0:
+ 427              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 428              		.file 3 "Generated_Source\\PSoC4/CyLib.h"
+ 429              		.file 4 "Generated_Source\\PSoC4\\Serial_SPI_UART_PVT.h"
+ 430              		.section	.debug_info,"",%progbits
+ 431              	.Ldebug_info0:
+ 432 0000 F7020000 		.4byte	0x2f7
+ 433 0004 0400     		.2byte	0x4
+ 434 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 435 000a 04       		.byte	0x4
+ 436 000b 01       		.uleb128 0x1
+ 437 000c EE010000 		.4byte	.LASF41
+ 438 0010 0C       		.byte	0xc
+ 439 0011 5F000000 		.4byte	.LASF42
+ 440 0015 00010000 		.4byte	.LASF43
+ 441 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 442 001d 00000000 		.4byte	0
+ 443 0021 00000000 		.4byte	.Ldebug_line0
+ 444 0025 02       		.uleb128 0x2
+ 445 0026 01       		.byte	0x1
+ 446 0027 06       		.byte	0x6
+ 447 0028 25030000 		.4byte	.LASF0
+ 448 002c 02       		.uleb128 0x2
+ 449 002d 01       		.byte	0x1
+ 450 002e 08       		.byte	0x8
+ 451 002f CC000000 		.4byte	.LASF1
+ 452 0033 02       		.uleb128 0x2
+ 453 0034 02       		.byte	0x2
+ 454 0035 05       		.byte	0x5
+ 455 0036 C0020000 		.4byte	.LASF2
+ 456 003a 02       		.uleb128 0x2
+ 457 003b 02       		.byte	0x2
+ 458 003c 07       		.byte	0x7
+ 459 003d 4C000000 		.4byte	.LASF3
+ 460 0041 02       		.uleb128 0x2
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 24
 
 
- 410 0060 696E7400 		.ascii	"int\000"
- 411 0064 02       		.uleb128 0x2
- 412 0065 04       		.byte	0x4
- 413 0066 07       		.byte	0x7
- 414 0067 74010000 		.4byte	.LASF8
- 415 006b 04       		.uleb128 0x4
- 416 006c CB000000 		.4byte	.LASF9
- 417 0070 02       		.byte	0x2
- 418 0071 FC01     		.2byte	0x1fc
- 419 0073 2C000000 		.4byte	0x2c
- 420 0077 04       		.uleb128 0x4
- 421 0078 50010000 		.4byte	.LASF10
- 422 007c 02       		.byte	0x2
- 423 007d FD01     		.2byte	0x1fd
- 424 007f 3A000000 		.4byte	0x3a
- 425 0083 04       		.uleb128 0x4
- 426 0084 57010000 		.4byte	.LASF11
- 427 0088 02       		.byte	0x2
- 428 0089 FE01     		.2byte	0x1fe
- 429 008b 48000000 		.4byte	0x48
- 430 008f 02       		.uleb128 0x2
- 431 0090 04       		.byte	0x4
- 432 0091 04       		.byte	0x4
- 433 0092 A5000000 		.4byte	.LASF12
- 434 0096 02       		.uleb128 0x2
- 435 0097 08       		.byte	0x8
- 436 0098 04       		.byte	0x4
- 437 0099 1B010000 		.4byte	.LASF13
- 438 009d 02       		.uleb128 0x2
- 439 009e 01       		.byte	0x1
- 440 009f 08       		.byte	0x8
- 441 00a0 58020000 		.4byte	.LASF14
- 442 00a4 04       		.uleb128 0x4
- 443 00a5 00000000 		.4byte	.LASF15
- 444 00a9 02       		.byte	0x2
- 445 00aa A802     		.2byte	0x2a8
- 446 00ac B0000000 		.4byte	0xb0
- 447 00b0 05       		.uleb128 0x5
- 448 00b1 83000000 		.4byte	0x83
- 449 00b5 02       		.uleb128 0x2
- 450 00b6 08       		.byte	0x8
- 451 00b7 04       		.byte	0x4
- 452 00b8 B3020000 		.4byte	.LASF16
- 453 00bc 02       		.uleb128 0x2
- 454 00bd 04       		.byte	0x4
- 455 00be 07       		.byte	0x7
- 456 00bf 41020000 		.4byte	.LASF17
- 457 00c3 06       		.uleb128 0x6
- 458 00c4 8C000000 		.4byte	.LASF18
- 459 00c8 01       		.byte	0x1
- 460 00c9 7D01     		.2byte	0x17d
- 461 00cb 00000000 		.4byte	.LFB7
- 462 00cf 08000000 		.4byte	.LFE7-.LFB7
- 463 00d3 01       		.uleb128 0x1
- 464 00d4 9C       		.byte	0x9c
- 465 00d5 E3000000 		.4byte	0xe3
- 466 00d9 07       		.uleb128 0x7
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 24
+ 461 0042 04       		.byte	0x4
+ 462 0043 05       		.byte	0x5
+ 463 0044 10030000 		.4byte	.LASF4
+ 464 0048 02       		.uleb128 0x2
+ 465 0049 04       		.byte	0x4
+ 466 004a 07       		.byte	0x7
+ 467 004b DA000000 		.4byte	.LASF5
+ 468 004f 02       		.uleb128 0x2
+ 469 0050 08       		.byte	0x8
+ 470 0051 05       		.byte	0x5
+ 471 0052 A0020000 		.4byte	.LASF6
+ 472 0056 02       		.uleb128 0x2
+ 473 0057 08       		.byte	0x8
+ 474 0058 07       		.byte	0x7
+ 475 0059 C5010000 		.4byte	.LASF7
+ 476 005d 03       		.uleb128 0x3
+ 477 005e 04       		.byte	0x4
+ 478 005f 05       		.byte	0x5
+ 479 0060 696E7400 		.ascii	"int\000"
+ 480 0064 02       		.uleb128 0x2
+ 481 0065 04       		.byte	0x4
+ 482 0066 07       		.byte	0x7
+ 483 0067 A6010000 		.4byte	.LASF8
+ 484 006b 04       		.uleb128 0x4
+ 485 006c EC000000 		.4byte	.LASF9
+ 486 0070 02       		.byte	0x2
+ 487 0071 FC01     		.2byte	0x1fc
+ 488 0073 2C000000 		.4byte	0x2c
+ 489 0077 04       		.uleb128 0x4
+ 490 0078 82010000 		.4byte	.LASF10
+ 491 007c 02       		.byte	0x2
+ 492 007d FD01     		.2byte	0x1fd
+ 493 007f 3A000000 		.4byte	0x3a
+ 494 0083 04       		.uleb128 0x4
+ 495 0084 89010000 		.4byte	.LASF11
+ 496 0088 02       		.byte	0x2
+ 497 0089 FE01     		.2byte	0x1fe
+ 498 008b 48000000 		.4byte	0x48
+ 499 008f 02       		.uleb128 0x2
+ 500 0090 04       		.byte	0x4
+ 501 0091 04       		.byte	0x4
+ 502 0092 C6000000 		.4byte	.LASF12
+ 503 0096 02       		.uleb128 0x2
+ 504 0097 08       		.byte	0x8
+ 505 0098 04       		.byte	0x4
+ 506 0099 3C010000 		.4byte	.LASF13
+ 507 009d 02       		.uleb128 0x2
+ 508 009e 01       		.byte	0x1
+ 509 009f 08       		.byte	0x8
+ 510 00a0 AE020000 		.4byte	.LASF14
+ 511 00a4 04       		.uleb128 0x4
+ 512 00a5 00000000 		.4byte	.LASF15
+ 513 00a9 02       		.byte	0x2
+ 514 00aa A802     		.2byte	0x2a8
+ 515 00ac B0000000 		.4byte	0xb0
+ 516 00b0 05       		.uleb128 0x5
+ 517 00b1 83000000 		.4byte	0x83
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 25
 
 
- 467 00da 06000000 		.4byte	.LVL0
- 468 00de 2A020000 		.4byte	0x22a
- 469 00e2 00       		.byte	0
- 470 00e3 06       		.uleb128 0x6
- 471 00e4 39000000 		.4byte	.LASF19
- 472 00e8 01       		.byte	0x1
- 473 00e9 A201     		.2byte	0x1a2
- 474 00eb 00000000 		.4byte	.LFB8
- 475 00ef 08000000 		.4byte	.LFE8-.LFB8
- 476 00f3 01       		.uleb128 0x1
- 477 00f4 9C       		.byte	0x9c
- 478 00f5 03010000 		.4byte	0x103
- 479 00f9 07       		.uleb128 0x7
- 480 00fa 06000000 		.4byte	.LVL1
- 481 00fe 35020000 		.4byte	0x235
- 482 0102 00       		.byte	0
- 483 0103 08       		.uleb128 0x8
- 484 0104 35020000 		.4byte	.LASF20
- 485 0108 01       		.byte	0x1
- 486 0109 7B       		.byte	0x7b
- 487 010a 00000000 		.4byte	.LFB0
- 488 010e 08000000 		.4byte	.LFE0-.LFB0
- 489 0112 01       		.uleb128 0x1
- 490 0113 9C       		.byte	0x9c
- 491 0114 22010000 		.4byte	0x122
- 492 0118 07       		.uleb128 0x7
- 493 0119 06000000 		.4byte	.LVL2
- 494 011d 40020000 		.4byte	0x240
- 495 0121 00       		.byte	0
- 496 0122 08       		.uleb128 0x8
- 497 0123 D1000000 		.4byte	.LASF21
- 498 0127 01       		.byte	0x1
- 499 0128 AB       		.byte	0xab
- 500 0129 00000000 		.4byte	.LFB1
- 501 012d 18000000 		.4byte	.LFE1-.LFB1
- 502 0131 01       		.uleb128 0x1
- 503 0132 9C       		.byte	0x9c
- 504 0133 41010000 		.4byte	0x141
- 505 0137 07       		.uleb128 0x7
- 506 0138 12000000 		.4byte	.LVL3
- 507 013c C3000000 		.4byte	0xc3
- 508 0140 00       		.byte	0
- 509 0141 08       		.uleb128 0x8
- 510 0142 7F000000 		.4byte	.LASF22
- 511 0146 01       		.byte	0x1
- 512 0147 D2       		.byte	0xd2
- 513 0148 00000000 		.4byte	.LFB2
- 514 014c 20000000 		.4byte	.LFE2-.LFB2
- 515 0150 01       		.uleb128 0x1
- 516 0151 9C       		.byte	0x9c
- 517 0152 69010000 		.4byte	0x169
- 518 0156 07       		.uleb128 0x7
- 519 0157 0E000000 		.4byte	.LVL4
- 520 015b 03010000 		.4byte	0x103
- 521 015f 07       		.uleb128 0x7
- 522 0160 18000000 		.4byte	.LVL5
- 523 0164 22010000 		.4byte	0x122
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 25
+ 518 00b5 06       		.uleb128 0x6
+ 519 00b6 04       		.byte	0x4
+ 520 00b7 BB000000 		.4byte	0xbb
+ 521 00bb 07       		.uleb128 0x7
+ 522 00bc 02       		.uleb128 0x2
+ 523 00bd 08       		.byte	0x8
+ 524 00be 04       		.byte	0x4
+ 525 00bf 19030000 		.4byte	.LASF16
+ 526 00c3 02       		.uleb128 0x2
+ 527 00c4 04       		.byte	0x4
+ 528 00c5 07       		.byte	0x7
+ 529 00c6 97020000 		.4byte	.LASF17
+ 530 00ca 08       		.uleb128 0x8
+ 531 00cb E0020000 		.4byte	.LASF18
+ 532 00cf 01       		.byte	0x1
+ 533 00d0 6401     		.2byte	0x164
+ 534 00d2 00000000 		.4byte	.LFB7
+ 535 00d6 0A000000 		.4byte	.LFE7-.LFB7
+ 536 00da 01       		.uleb128 0x1
+ 537 00db 9C       		.byte	0x9c
+ 538 00dc F0000000 		.4byte	0xf0
+ 539 00e0 09       		.uleb128 0x9
+ 540 00e1 08000000 		.4byte	.LVL0
+ 541 00e5 B8020000 		.4byte	0x2b8
+ 542 00e9 0A       		.uleb128 0xa
+ 543 00ea 01       		.uleb128 0x1
+ 544 00eb 50       		.byte	0x50
+ 545 00ec 01       		.uleb128 0x1
+ 546 00ed 3B       		.byte	0x3b
+ 547 00ee 00       		.byte	0
+ 548 00ef 00       		.byte	0
+ 549 00f0 08       		.uleb128 0x8
+ 550 00f1 8C000000 		.4byte	.LASF19
+ 551 00f5 01       		.byte	0x1
+ 552 00f6 7D01     		.2byte	0x17d
+ 553 00f8 00000000 		.4byte	.LFB8
+ 554 00fc 08000000 		.4byte	.LFE8-.LFB8
+ 555 0100 01       		.uleb128 0x1
+ 556 0101 9C       		.byte	0x9c
+ 557 0102 10010000 		.4byte	0x110
+ 558 0106 0B       		.uleb128 0xb
+ 559 0107 06000000 		.4byte	.LVL1
+ 560 010b C3020000 		.4byte	0x2c3
+ 561 010f 00       		.byte	0
+ 562 0110 08       		.uleb128 0x8
+ 563 0111 39000000 		.4byte	.LASF20
+ 564 0115 01       		.byte	0x1
+ 565 0116 A201     		.2byte	0x1a2
+ 566 0118 00000000 		.4byte	.LFB9
+ 567 011c 08000000 		.4byte	.LFE9-.LFB9
+ 568 0120 01       		.uleb128 0x1
+ 569 0121 9C       		.byte	0x9c
+ 570 0122 30010000 		.4byte	0x130
+ 571 0126 0B       		.uleb128 0xb
+ 572 0127 06000000 		.4byte	.LVL2
+ 573 012b CE020000 		.4byte	0x2ce
+ 574 012f 00       		.byte	0
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 26
 
 
- 524 0168 00       		.byte	0
- 525 0169 08       		.uleb128 0x8
- 526 016a 06000000 		.4byte	.LASF23
- 527 016e 01       		.byte	0x1
- 528 016f EF       		.byte	0xef
- 529 0170 00000000 		.4byte	.LFB3
- 530 0174 20000000 		.4byte	.LFE3-.LFB3
- 531 0178 01       		.uleb128 0x1
- 532 0179 9C       		.byte	0x9c
- 533 017a 88010000 		.4byte	0x188
- 534 017e 07       		.uleb128 0x7
- 535 017f 06000000 		.4byte	.LVL6
- 536 0183 E3000000 		.4byte	0xe3
- 537 0187 00       		.byte	0
- 538 0188 09       		.uleb128 0x9
- 539 0189 23000000 		.4byte	.LASF24
- 540 018d 01       		.byte	0x1
- 541 018e 1701     		.2byte	0x117
- 542 0190 00000000 		.4byte	.LFB4
- 543 0194 14000000 		.4byte	.LFE4-.LFB4
- 544 0198 01       		.uleb128 0x1
- 545 0199 9C       		.byte	0x9c
- 546 019a BF010000 		.4byte	0x1bf
- 547 019e 0A       		.uleb128 0xa
- 548 019f 1D000000 		.4byte	.LASF26
- 549 01a3 01       		.byte	0x1
- 550 01a4 1701     		.2byte	0x117
- 551 01a6 83000000 		.4byte	0x83
- 552 01aa 00000000 		.4byte	.LLST0
- 553 01ae 0B       		.uleb128 0xb
- 554 01af 9F020000 		.4byte	.LASF27
- 555 01b3 01       		.byte	0x1
- 556 01b4 1901     		.2byte	0x119
- 557 01b6 83000000 		.4byte	0x83
- 558 01ba 21000000 		.4byte	.LLST1
- 559 01be 00       		.byte	0
- 560 01bf 09       		.uleb128 0x9
- 561 01c0 5E010000 		.4byte	.LASF25
- 562 01c4 01       		.byte	0x1
- 563 01c5 3001     		.2byte	0x130
- 564 01c7 00000000 		.4byte	.LFB5
- 565 01cb 14000000 		.4byte	.LFE5-.LFB5
- 566 01cf 01       		.uleb128 0x1
- 567 01d0 9C       		.byte	0x9c
- 568 01d1 F6010000 		.4byte	0x1f6
- 569 01d5 0A       		.uleb128 0xa
- 570 01d6 1D000000 		.4byte	.LASF26
- 571 01da 01       		.byte	0x1
- 572 01db 3001     		.2byte	0x130
- 573 01dd 83000000 		.4byte	0x83
- 574 01e1 3F000000 		.4byte	.LLST2
- 575 01e5 0B       		.uleb128 0xb
- 576 01e6 12000000 		.4byte	.LASF28
- 577 01ea 01       		.byte	0x1
- 578 01eb 3201     		.2byte	0x132
- 579 01ed 83000000 		.4byte	0x83
- 580 01f1 60000000 		.4byte	.LLST3
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 26
+ 575 0130 0C       		.uleb128 0xc
+ 576 0131 8B020000 		.4byte	.LASF21
+ 577 0135 01       		.byte	0x1
+ 578 0136 7B       		.byte	0x7b
+ 579 0137 00000000 		.4byte	.LFB0
+ 580 013b 08000000 		.4byte	.LFE0-.LFB0
+ 581 013f 01       		.uleb128 0x1
+ 582 0140 9C       		.byte	0x9c
+ 583 0141 4F010000 		.4byte	0x14f
+ 584 0145 0B       		.uleb128 0xb
+ 585 0146 06000000 		.4byte	.LVL3
+ 586 014a D9020000 		.4byte	0x2d9
+ 587 014e 00       		.byte	0
+ 588 014f 0C       		.uleb128 0xc
+ 589 0150 F2000000 		.4byte	.LASF22
+ 590 0154 01       		.byte	0x1
+ 591 0155 AB       		.byte	0xab
+ 592 0156 00000000 		.4byte	.LFB1
+ 593 015a 1C000000 		.4byte	.LFE1-.LFB1
+ 594 015e 01       		.uleb128 0x1
+ 595 015f 9C       		.byte	0x9c
+ 596 0160 77010000 		.4byte	0x177
+ 597 0164 0B       		.uleb128 0xb
+ 598 0165 12000000 		.4byte	.LVL4
+ 599 0169 CA000000 		.4byte	0xca
+ 600 016d 0B       		.uleb128 0xb
+ 601 016e 16000000 		.4byte	.LVL5
+ 602 0172 F0000000 		.4byte	0xf0
+ 603 0176 00       		.byte	0
+ 604 0177 0C       		.uleb128 0xc
+ 605 0178 7F000000 		.4byte	.LASF23
+ 606 017c 01       		.byte	0x1
+ 607 017d D2       		.byte	0xd2
+ 608 017e 00000000 		.4byte	.LFB2
+ 609 0182 20000000 		.4byte	.LFE2-.LFB2
+ 610 0186 01       		.uleb128 0x1
+ 611 0187 9C       		.byte	0x9c
+ 612 0188 9F010000 		.4byte	0x19f
+ 613 018c 0B       		.uleb128 0xb
+ 614 018d 0E000000 		.4byte	.LVL6
+ 615 0191 30010000 		.4byte	0x130
+ 616 0195 0B       		.uleb128 0xb
+ 617 0196 18000000 		.4byte	.LVL7
+ 618 019a 4F010000 		.4byte	0x14f
+ 619 019e 00       		.byte	0
+ 620 019f 0C       		.uleb128 0xc
+ 621 01a0 06000000 		.4byte	.LASF24
+ 622 01a4 01       		.byte	0x1
+ 623 01a5 EF       		.byte	0xef
+ 624 01a6 00000000 		.4byte	.LFB3
+ 625 01aa 2C000000 		.4byte	.LFE3-.LFB3
+ 626 01ae 01       		.uleb128 0x1
+ 627 01af 9C       		.byte	0x9c
+ 628 01b0 E0010000 		.4byte	0x1e0
+ 629 01b4 0D       		.uleb128 0xd
+ 630 01b5 08000000 		.4byte	.LVL8
+ 631 01b9 E4020000 		.4byte	0x2e4
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 27
 
 
- 581 01f5 00       		.byte	0
- 582 01f6 0C       		.uleb128 0xc
- 583 01f7 22010000 		.4byte	.LASF37
- 584 01fb 01       		.byte	0x1
- 585 01fc 2203     		.2byte	0x322
- 586 01fe 00000000 		.4byte	.LFB9
- 587 0202 3C000000 		.4byte	.LFE9-.LFB9
- 588 0206 01       		.uleb128 0x1
- 589 0207 9C       		.byte	0x9c
- 590 0208 0D       		.uleb128 0xd
- 591 0209 26020000 		.4byte	.LASF29
- 592 020d 01       		.byte	0x1
- 593 020e 51       		.byte	0x51
- 594 020f 6B000000 		.4byte	0x6b
- 595 0213 05       		.uleb128 0x5
- 596 0214 03       		.byte	0x3
- 597 0215 00000000 		.4byte	Serial_initVar
- 598 0219 0D       		.uleb128 0xd
- 599 021a 7D020000 		.4byte	.LASF30
- 600 021e 01       		.byte	0x1
- 601 021f 5A       		.byte	0x5a
- 602 0220 77000000 		.4byte	0x77
- 603 0224 05       		.uleb128 0x5
- 604 0225 03       		.byte	0x3
- 605 0226 00000000 		.4byte	Serial_IntrTxMask
- 606 022a 0E       		.uleb128 0xe
- 607 022b 67020000 		.4byte	.LASF31
- 608 022f 67020000 		.4byte	.LASF31
- 609 0233 03       		.byte	0x3
- 610 0234 4C       		.byte	0x4c
- 611 0235 0E       		.uleb128 0xe
- 612 0236 8F020000 		.4byte	.LASF32
- 613 023a 8F020000 		.4byte	.LASF32
- 614 023e 03       		.byte	0x3
- 615 023f 4D       		.byte	0x4d
- 616 0240 0E       		.uleb128 0xe
- 617 0241 40010000 		.4byte	.LASF33
- 618 0245 40010000 		.4byte	.LASF33
- 619 0249 03       		.byte	0x3
- 620 024a 50       		.byte	0x50
- 621 024b 00       		.byte	0
- 622              		.section	.debug_abbrev,"",%progbits
- 623              	.Ldebug_abbrev0:
- 624 0000 01       		.uleb128 0x1
- 625 0001 11       		.uleb128 0x11
- 626 0002 01       		.byte	0x1
- 627 0003 25       		.uleb128 0x25
- 628 0004 0E       		.uleb128 0xe
- 629 0005 13       		.uleb128 0x13
- 630 0006 0B       		.uleb128 0xb
- 631 0007 03       		.uleb128 0x3
- 632 0008 0E       		.uleb128 0xe
- 633 0009 1B       		.uleb128 0x1b
- 634 000a 0E       		.uleb128 0xe
- 635 000b 55       		.uleb128 0x55
- 636 000c 17       		.uleb128 0x17
- 637 000d 11       		.uleb128 0x11
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 27
+ 632 01bd C7010000 		.4byte	0x1c7
+ 633 01c1 0A       		.uleb128 0xa
+ 634 01c2 01       		.uleb128 0x1
+ 635 01c3 50       		.byte	0x50
+ 636 01c4 01       		.uleb128 0x1
+ 637 01c5 3B       		.byte	0x3b
+ 638 01c6 00       		.byte	0
+ 639 01c7 0B       		.uleb128 0xb
+ 640 01c8 0C000000 		.4byte	.LVL9
+ 641 01cc 10010000 		.4byte	0x110
+ 642 01d0 09       		.uleb128 0x9
+ 643 01d1 22000000 		.4byte	.LVL10
+ 644 01d5 EF020000 		.4byte	0x2ef
+ 645 01d9 0A       		.uleb128 0xa
+ 646 01da 01       		.uleb128 0x1
+ 647 01db 50       		.byte	0x50
+ 648 01dc 01       		.uleb128 0x1
+ 649 01dd 3B       		.byte	0x3b
+ 650 01de 00       		.byte	0
+ 651 01df 00       		.byte	0
+ 652 01e0 0E       		.uleb128 0xe
+ 653 01e1 23000000 		.4byte	.LASF25
+ 654 01e5 01       		.byte	0x1
+ 655 01e6 1701     		.2byte	0x117
+ 656 01e8 00000000 		.4byte	.LFB4
+ 657 01ec 14000000 		.4byte	.LFE4-.LFB4
+ 658 01f0 01       		.uleb128 0x1
+ 659 01f1 9C       		.byte	0x9c
+ 660 01f2 17020000 		.4byte	0x217
+ 661 01f6 0F       		.uleb128 0xf
+ 662 01f7 1D000000 		.4byte	.LASF27
+ 663 01fb 01       		.byte	0x1
+ 664 01fc 1701     		.2byte	0x117
+ 665 01fe 83000000 		.4byte	0x83
+ 666 0202 00000000 		.4byte	.LLST0
+ 667 0206 10       		.uleb128 0x10
+ 668 0207 05030000 		.4byte	.LASF28
+ 669 020b 01       		.byte	0x1
+ 670 020c 1901     		.2byte	0x119
+ 671 020e 83000000 		.4byte	0x83
+ 672 0212 21000000 		.4byte	.LLST1
+ 673 0216 00       		.byte	0
+ 674 0217 0E       		.uleb128 0xe
+ 675 0218 90010000 		.4byte	.LASF26
+ 676 021c 01       		.byte	0x1
+ 677 021d 3001     		.2byte	0x130
+ 678 021f 00000000 		.4byte	.LFB5
+ 679 0223 14000000 		.4byte	.LFE5-.LFB5
+ 680 0227 01       		.uleb128 0x1
+ 681 0228 9C       		.byte	0x9c
+ 682 0229 4E020000 		.4byte	0x24e
+ 683 022d 0F       		.uleb128 0xf
+ 684 022e 1D000000 		.4byte	.LASF27
+ 685 0232 01       		.byte	0x1
+ 686 0233 3001     		.2byte	0x130
+ 687 0235 83000000 		.4byte	0x83
+ 688 0239 3F000000 		.4byte	.LLST2
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 28
 
 
- 638 000e 01       		.uleb128 0x1
- 639 000f 10       		.uleb128 0x10
- 640 0010 17       		.uleb128 0x17
- 641 0011 00       		.byte	0
- 642 0012 00       		.byte	0
- 643 0013 02       		.uleb128 0x2
- 644 0014 24       		.uleb128 0x24
- 645 0015 00       		.byte	0
- 646 0016 0B       		.uleb128 0xb
- 647 0017 0B       		.uleb128 0xb
- 648 0018 3E       		.uleb128 0x3e
- 649 0019 0B       		.uleb128 0xb
- 650 001a 03       		.uleb128 0x3
- 651 001b 0E       		.uleb128 0xe
- 652 001c 00       		.byte	0
- 653 001d 00       		.byte	0
- 654 001e 03       		.uleb128 0x3
- 655 001f 24       		.uleb128 0x24
- 656 0020 00       		.byte	0
- 657 0021 0B       		.uleb128 0xb
- 658 0022 0B       		.uleb128 0xb
- 659 0023 3E       		.uleb128 0x3e
- 660 0024 0B       		.uleb128 0xb
- 661 0025 03       		.uleb128 0x3
- 662 0026 08       		.uleb128 0x8
- 663 0027 00       		.byte	0
- 664 0028 00       		.byte	0
- 665 0029 04       		.uleb128 0x4
- 666 002a 16       		.uleb128 0x16
- 667 002b 00       		.byte	0
- 668 002c 03       		.uleb128 0x3
- 669 002d 0E       		.uleb128 0xe
- 670 002e 3A       		.uleb128 0x3a
- 671 002f 0B       		.uleb128 0xb
- 672 0030 3B       		.uleb128 0x3b
- 673 0031 05       		.uleb128 0x5
- 674 0032 49       		.uleb128 0x49
- 675 0033 13       		.uleb128 0x13
- 676 0034 00       		.byte	0
- 677 0035 00       		.byte	0
- 678 0036 05       		.uleb128 0x5
- 679 0037 35       		.uleb128 0x35
- 680 0038 00       		.byte	0
- 681 0039 49       		.uleb128 0x49
- 682 003a 13       		.uleb128 0x13
- 683 003b 00       		.byte	0
- 684 003c 00       		.byte	0
- 685 003d 06       		.uleb128 0x6
- 686 003e 2E       		.uleb128 0x2e
- 687 003f 01       		.byte	0x1
- 688 0040 03       		.uleb128 0x3
- 689 0041 0E       		.uleb128 0xe
- 690 0042 3A       		.uleb128 0x3a
- 691 0043 0B       		.uleb128 0xb
- 692 0044 3B       		.uleb128 0x3b
- 693 0045 05       		.uleb128 0x5
- 694 0046 27       		.uleb128 0x27
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 28
+ 689 023d 10       		.uleb128 0x10
+ 690 023e 12000000 		.4byte	.LASF29
+ 691 0242 01       		.byte	0x1
+ 692 0243 3201     		.2byte	0x132
+ 693 0245 83000000 		.4byte	0x83
+ 694 0249 60000000 		.4byte	.LLST3
+ 695 024d 00       		.byte	0
+ 696 024e 0E       		.uleb128 0xe
+ 697 024f A5000000 		.4byte	.LASF30
+ 698 0253 01       		.byte	0x1
+ 699 0254 4F01     		.2byte	0x14f
+ 700 0256 00000000 		.4byte	.LFB6
+ 701 025a 0C000000 		.4byte	.LFE6-.LFB6
+ 702 025e 01       		.uleb128 0x1
+ 703 025f 9C       		.byte	0x9c
+ 704 0260 73020000 		.4byte	0x273
+ 705 0264 11       		.uleb128 0x11
+ 706 0265 61010000 		.4byte	.LASF31
+ 707 0269 01       		.byte	0x1
+ 708 026a 4F01     		.2byte	0x14f
+ 709 026c B5000000 		.4byte	0xb5
+ 710 0270 01       		.uleb128 0x1
+ 711 0271 50       		.byte	0x50
+ 712 0272 00       		.byte	0
+ 713 0273 12       		.uleb128 0x12
+ 714 0274 43010000 		.4byte	.LASF44
+ 715 0278 01       		.byte	0x1
+ 716 0279 2203     		.2byte	0x322
+ 717 027b 00000000 		.4byte	.LFB10
+ 718 027f 3C000000 		.4byte	.LFE10-.LFB10
+ 719 0283 01       		.uleb128 0x1
+ 720 0284 9C       		.byte	0x9c
+ 721 0285 13       		.uleb128 0x13
+ 722 0286 7C020000 		.4byte	.LASF32
+ 723 028a 01       		.byte	0x1
+ 724 028b 51       		.byte	0x51
+ 725 028c 6B000000 		.4byte	0x6b
+ 726 0290 05       		.uleb128 0x5
+ 727 0291 03       		.byte	0x3
+ 728 0292 00000000 		.4byte	Serial_initVar
+ 729 0296 13       		.uleb128 0x13
+ 730 0297 31030000 		.4byte	.LASF33
+ 731 029b 01       		.byte	0x1
+ 732 029c 61       		.byte	0x61
+ 733 029d B5000000 		.4byte	0xb5
+ 734 02a1 05       		.uleb128 0x5
+ 735 02a2 03       		.byte	0x3
+ 736 02a3 00000000 		.4byte	Serial_customIntrHandler
+ 737 02a7 13       		.uleb128 0x13
+ 738 02a8 B3010000 		.4byte	.LASF34
+ 739 02ac 01       		.byte	0x1
+ 740 02ad 5A       		.byte	0x5a
+ 741 02ae 77000000 		.4byte	0x77
+ 742 02b2 05       		.uleb128 0x5
+ 743 02b3 03       		.byte	0x3
+ 744 02b4 00000000 		.4byte	Serial_IntrTxMask
+ 745 02b8 14       		.uleb128 0x14
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 29
 
 
- 695 0047 19       		.uleb128 0x19
- 696 0048 11       		.uleb128 0x11
- 697 0049 01       		.uleb128 0x1
- 698 004a 12       		.uleb128 0x12
- 699 004b 06       		.uleb128 0x6
- 700 004c 40       		.uleb128 0x40
- 701 004d 18       		.uleb128 0x18
- 702 004e 9742     		.uleb128 0x2117
- 703 0050 19       		.uleb128 0x19
- 704 0051 01       		.uleb128 0x1
- 705 0052 13       		.uleb128 0x13
- 706 0053 00       		.byte	0
- 707 0054 00       		.byte	0
- 708 0055 07       		.uleb128 0x7
- 709 0056 898201   		.uleb128 0x4109
- 710 0059 00       		.byte	0
- 711 005a 11       		.uleb128 0x11
- 712 005b 01       		.uleb128 0x1
- 713 005c 31       		.uleb128 0x31
- 714 005d 13       		.uleb128 0x13
- 715 005e 00       		.byte	0
- 716 005f 00       		.byte	0
- 717 0060 08       		.uleb128 0x8
- 718 0061 2E       		.uleb128 0x2e
- 719 0062 01       		.byte	0x1
- 720 0063 3F       		.uleb128 0x3f
- 721 0064 19       		.uleb128 0x19
- 722 0065 03       		.uleb128 0x3
- 723 0066 0E       		.uleb128 0xe
- 724 0067 3A       		.uleb128 0x3a
- 725 0068 0B       		.uleb128 0xb
- 726 0069 3B       		.uleb128 0x3b
- 727 006a 0B       		.uleb128 0xb
- 728 006b 27       		.uleb128 0x27
- 729 006c 19       		.uleb128 0x19
- 730 006d 11       		.uleb128 0x11
- 731 006e 01       		.uleb128 0x1
- 732 006f 12       		.uleb128 0x12
- 733 0070 06       		.uleb128 0x6
- 734 0071 40       		.uleb128 0x40
- 735 0072 18       		.uleb128 0x18
- 736 0073 9742     		.uleb128 0x2117
- 737 0075 19       		.uleb128 0x19
- 738 0076 01       		.uleb128 0x1
- 739 0077 13       		.uleb128 0x13
- 740 0078 00       		.byte	0
- 741 0079 00       		.byte	0
- 742 007a 09       		.uleb128 0x9
- 743 007b 2E       		.uleb128 0x2e
- 744 007c 01       		.byte	0x1
- 745 007d 3F       		.uleb128 0x3f
- 746 007e 19       		.uleb128 0x19
- 747 007f 03       		.uleb128 0x3
- 748 0080 0E       		.uleb128 0xe
- 749 0081 3A       		.uleb128 0x3a
- 750 0082 0B       		.uleb128 0xb
- 751 0083 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 29
+ 746 02b9 66010000 		.4byte	.LASF35
+ 747 02bd 66010000 		.4byte	.LASF35
+ 748 02c1 03       		.byte	0x3
+ 749 02c2 D6       		.byte	0xd6
+ 750 02c3 14       		.uleb128 0x14
+ 751 02c4 CA020000 		.4byte	.LASF36
+ 752 02c8 CA020000 		.4byte	.LASF36
+ 753 02cc 04       		.byte	0x4
+ 754 02cd 4C       		.byte	0x4c
+ 755 02ce 14       		.uleb128 0x14
+ 756 02cf F5020000 		.4byte	.LASF37
+ 757 02d3 F5020000 		.4byte	.LASF37
+ 758 02d7 04       		.byte	0x4
+ 759 02d8 4D       		.byte	0x4d
+ 760 02d9 14       		.uleb128 0x14
+ 761 02da 72010000 		.4byte	.LASF38
+ 762 02de 72010000 		.4byte	.LASF38
+ 763 02e2 04       		.byte	0x4
+ 764 02e3 50       		.byte	0x50
+ 765 02e4 14       		.uleb128 0x14
+ 766 02e5 B3020000 		.4byte	.LASF39
+ 767 02e9 B3020000 		.4byte	.LASF39
+ 768 02ed 03       		.byte	0x3
+ 769 02ee D8       		.byte	0xd8
+ 770 02ef 14       		.uleb128 0x14
+ 771 02f0 DC010000 		.4byte	.LASF40
+ 772 02f4 DC010000 		.4byte	.LASF40
+ 773 02f8 03       		.byte	0x3
+ 774 02f9 DB       		.byte	0xdb
+ 775 02fa 00       		.byte	0
+ 776              		.section	.debug_abbrev,"",%progbits
+ 777              	.Ldebug_abbrev0:
+ 778 0000 01       		.uleb128 0x1
+ 779 0001 11       		.uleb128 0x11
+ 780 0002 01       		.byte	0x1
+ 781 0003 25       		.uleb128 0x25
+ 782 0004 0E       		.uleb128 0xe
+ 783 0005 13       		.uleb128 0x13
+ 784 0006 0B       		.uleb128 0xb
+ 785 0007 03       		.uleb128 0x3
+ 786 0008 0E       		.uleb128 0xe
+ 787 0009 1B       		.uleb128 0x1b
+ 788 000a 0E       		.uleb128 0xe
+ 789 000b 55       		.uleb128 0x55
+ 790 000c 17       		.uleb128 0x17
+ 791 000d 11       		.uleb128 0x11
+ 792 000e 01       		.uleb128 0x1
+ 793 000f 10       		.uleb128 0x10
+ 794 0010 17       		.uleb128 0x17
+ 795 0011 00       		.byte	0
+ 796 0012 00       		.byte	0
+ 797 0013 02       		.uleb128 0x2
+ 798 0014 24       		.uleb128 0x24
+ 799 0015 00       		.byte	0
+ 800 0016 0B       		.uleb128 0xb
+ 801 0017 0B       		.uleb128 0xb
+ 802 0018 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 30
 
 
- 752 0084 05       		.uleb128 0x5
- 753 0085 27       		.uleb128 0x27
- 754 0086 19       		.uleb128 0x19
- 755 0087 11       		.uleb128 0x11
- 756 0088 01       		.uleb128 0x1
- 757 0089 12       		.uleb128 0x12
- 758 008a 06       		.uleb128 0x6
- 759 008b 40       		.uleb128 0x40
- 760 008c 18       		.uleb128 0x18
- 761 008d 9742     		.uleb128 0x2117
- 762 008f 19       		.uleb128 0x19
- 763 0090 01       		.uleb128 0x1
- 764 0091 13       		.uleb128 0x13
- 765 0092 00       		.byte	0
- 766 0093 00       		.byte	0
- 767 0094 0A       		.uleb128 0xa
- 768 0095 05       		.uleb128 0x5
- 769 0096 00       		.byte	0
- 770 0097 03       		.uleb128 0x3
- 771 0098 0E       		.uleb128 0xe
- 772 0099 3A       		.uleb128 0x3a
- 773 009a 0B       		.uleb128 0xb
- 774 009b 3B       		.uleb128 0x3b
- 775 009c 05       		.uleb128 0x5
- 776 009d 49       		.uleb128 0x49
- 777 009e 13       		.uleb128 0x13
- 778 009f 02       		.uleb128 0x2
- 779 00a0 17       		.uleb128 0x17
- 780 00a1 00       		.byte	0
- 781 00a2 00       		.byte	0
- 782 00a3 0B       		.uleb128 0xb
- 783 00a4 34       		.uleb128 0x34
- 784 00a5 00       		.byte	0
- 785 00a6 03       		.uleb128 0x3
- 786 00a7 0E       		.uleb128 0xe
- 787 00a8 3A       		.uleb128 0x3a
- 788 00a9 0B       		.uleb128 0xb
- 789 00aa 3B       		.uleb128 0x3b
- 790 00ab 05       		.uleb128 0x5
- 791 00ac 49       		.uleb128 0x49
- 792 00ad 13       		.uleb128 0x13
- 793 00ae 02       		.uleb128 0x2
- 794 00af 17       		.uleb128 0x17
- 795 00b0 00       		.byte	0
- 796 00b1 00       		.byte	0
- 797 00b2 0C       		.uleb128 0xc
- 798 00b3 2E       		.uleb128 0x2e
- 799 00b4 00       		.byte	0
- 800 00b5 3F       		.uleb128 0x3f
- 801 00b6 19       		.uleb128 0x19
- 802 00b7 03       		.uleb128 0x3
- 803 00b8 0E       		.uleb128 0xe
- 804 00b9 3A       		.uleb128 0x3a
- 805 00ba 0B       		.uleb128 0xb
- 806 00bb 3B       		.uleb128 0x3b
- 807 00bc 05       		.uleb128 0x5
- 808 00bd 27       		.uleb128 0x27
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 30
+ 803 0019 0B       		.uleb128 0xb
+ 804 001a 03       		.uleb128 0x3
+ 805 001b 0E       		.uleb128 0xe
+ 806 001c 00       		.byte	0
+ 807 001d 00       		.byte	0
+ 808 001e 03       		.uleb128 0x3
+ 809 001f 24       		.uleb128 0x24
+ 810 0020 00       		.byte	0
+ 811 0021 0B       		.uleb128 0xb
+ 812 0022 0B       		.uleb128 0xb
+ 813 0023 3E       		.uleb128 0x3e
+ 814 0024 0B       		.uleb128 0xb
+ 815 0025 03       		.uleb128 0x3
+ 816 0026 08       		.uleb128 0x8
+ 817 0027 00       		.byte	0
+ 818 0028 00       		.byte	0
+ 819 0029 04       		.uleb128 0x4
+ 820 002a 16       		.uleb128 0x16
+ 821 002b 00       		.byte	0
+ 822 002c 03       		.uleb128 0x3
+ 823 002d 0E       		.uleb128 0xe
+ 824 002e 3A       		.uleb128 0x3a
+ 825 002f 0B       		.uleb128 0xb
+ 826 0030 3B       		.uleb128 0x3b
+ 827 0031 05       		.uleb128 0x5
+ 828 0032 49       		.uleb128 0x49
+ 829 0033 13       		.uleb128 0x13
+ 830 0034 00       		.byte	0
+ 831 0035 00       		.byte	0
+ 832 0036 05       		.uleb128 0x5
+ 833 0037 35       		.uleb128 0x35
+ 834 0038 00       		.byte	0
+ 835 0039 49       		.uleb128 0x49
+ 836 003a 13       		.uleb128 0x13
+ 837 003b 00       		.byte	0
+ 838 003c 00       		.byte	0
+ 839 003d 06       		.uleb128 0x6
+ 840 003e 0F       		.uleb128 0xf
+ 841 003f 00       		.byte	0
+ 842 0040 0B       		.uleb128 0xb
+ 843 0041 0B       		.uleb128 0xb
+ 844 0042 49       		.uleb128 0x49
+ 845 0043 13       		.uleb128 0x13
+ 846 0044 00       		.byte	0
+ 847 0045 00       		.byte	0
+ 848 0046 07       		.uleb128 0x7
+ 849 0047 15       		.uleb128 0x15
+ 850 0048 00       		.byte	0
+ 851 0049 27       		.uleb128 0x27
+ 852 004a 19       		.uleb128 0x19
+ 853 004b 00       		.byte	0
+ 854 004c 00       		.byte	0
+ 855 004d 08       		.uleb128 0x8
+ 856 004e 2E       		.uleb128 0x2e
+ 857 004f 01       		.byte	0x1
+ 858 0050 03       		.uleb128 0x3
+ 859 0051 0E       		.uleb128 0xe
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 31
 
 
- 809 00be 19       		.uleb128 0x19
- 810 00bf 11       		.uleb128 0x11
- 811 00c0 01       		.uleb128 0x1
- 812 00c1 12       		.uleb128 0x12
- 813 00c2 06       		.uleb128 0x6
- 814 00c3 40       		.uleb128 0x40
- 815 00c4 18       		.uleb128 0x18
- 816 00c5 9742     		.uleb128 0x2117
- 817 00c7 19       		.uleb128 0x19
- 818 00c8 00       		.byte	0
- 819 00c9 00       		.byte	0
- 820 00ca 0D       		.uleb128 0xd
- 821 00cb 34       		.uleb128 0x34
- 822 00cc 00       		.byte	0
- 823 00cd 03       		.uleb128 0x3
- 824 00ce 0E       		.uleb128 0xe
- 825 00cf 3A       		.uleb128 0x3a
- 826 00d0 0B       		.uleb128 0xb
- 827 00d1 3B       		.uleb128 0x3b
- 828 00d2 0B       		.uleb128 0xb
- 829 00d3 49       		.uleb128 0x49
- 830 00d4 13       		.uleb128 0x13
- 831 00d5 3F       		.uleb128 0x3f
- 832 00d6 19       		.uleb128 0x19
- 833 00d7 02       		.uleb128 0x2
- 834 00d8 18       		.uleb128 0x18
- 835 00d9 00       		.byte	0
- 836 00da 00       		.byte	0
- 837 00db 0E       		.uleb128 0xe
- 838 00dc 2E       		.uleb128 0x2e
- 839 00dd 00       		.byte	0
- 840 00de 3F       		.uleb128 0x3f
- 841 00df 19       		.uleb128 0x19
- 842 00e0 3C       		.uleb128 0x3c
- 843 00e1 19       		.uleb128 0x19
- 844 00e2 6E       		.uleb128 0x6e
- 845 00e3 0E       		.uleb128 0xe
- 846 00e4 03       		.uleb128 0x3
- 847 00e5 0E       		.uleb128 0xe
- 848 00e6 3A       		.uleb128 0x3a
- 849 00e7 0B       		.uleb128 0xb
- 850 00e8 3B       		.uleb128 0x3b
- 851 00e9 0B       		.uleb128 0xb
- 852 00ea 00       		.byte	0
- 853 00eb 00       		.byte	0
- 854 00ec 00       		.byte	0
- 855              		.section	.debug_loc,"",%progbits
- 856              	.Ldebug_loc0:
- 857              	.LLST0:
- 858 0000 00000000 		.4byte	.LVL7
- 859 0004 0A000000 		.4byte	.LVL10
- 860 0008 0100     		.2byte	0x1
- 861 000a 50       		.byte	0x50
- 862 000b 0A000000 		.4byte	.LVL10
- 863 000f 14000000 		.4byte	.LFE4
- 864 0013 0400     		.2byte	0x4
- 865 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 31
+ 860 0052 3A       		.uleb128 0x3a
+ 861 0053 0B       		.uleb128 0xb
+ 862 0054 3B       		.uleb128 0x3b
+ 863 0055 05       		.uleb128 0x5
+ 864 0056 27       		.uleb128 0x27
+ 865 0057 19       		.uleb128 0x19
+ 866 0058 11       		.uleb128 0x11
+ 867 0059 01       		.uleb128 0x1
+ 868 005a 12       		.uleb128 0x12
+ 869 005b 06       		.uleb128 0x6
+ 870 005c 40       		.uleb128 0x40
+ 871 005d 18       		.uleb128 0x18
+ 872 005e 9742     		.uleb128 0x2117
+ 873 0060 19       		.uleb128 0x19
+ 874 0061 01       		.uleb128 0x1
+ 875 0062 13       		.uleb128 0x13
+ 876 0063 00       		.byte	0
+ 877 0064 00       		.byte	0
+ 878 0065 09       		.uleb128 0x9
+ 879 0066 898201   		.uleb128 0x4109
+ 880 0069 01       		.byte	0x1
+ 881 006a 11       		.uleb128 0x11
+ 882 006b 01       		.uleb128 0x1
+ 883 006c 31       		.uleb128 0x31
+ 884 006d 13       		.uleb128 0x13
+ 885 006e 00       		.byte	0
+ 886 006f 00       		.byte	0
+ 887 0070 0A       		.uleb128 0xa
+ 888 0071 8A8201   		.uleb128 0x410a
+ 889 0074 00       		.byte	0
+ 890 0075 02       		.uleb128 0x2
+ 891 0076 18       		.uleb128 0x18
+ 892 0077 9142     		.uleb128 0x2111
+ 893 0079 18       		.uleb128 0x18
+ 894 007a 00       		.byte	0
+ 895 007b 00       		.byte	0
+ 896 007c 0B       		.uleb128 0xb
+ 897 007d 898201   		.uleb128 0x4109
+ 898 0080 00       		.byte	0
+ 899 0081 11       		.uleb128 0x11
+ 900 0082 01       		.uleb128 0x1
+ 901 0083 31       		.uleb128 0x31
+ 902 0084 13       		.uleb128 0x13
+ 903 0085 00       		.byte	0
+ 904 0086 00       		.byte	0
+ 905 0087 0C       		.uleb128 0xc
+ 906 0088 2E       		.uleb128 0x2e
+ 907 0089 01       		.byte	0x1
+ 908 008a 3F       		.uleb128 0x3f
+ 909 008b 19       		.uleb128 0x19
+ 910 008c 03       		.uleb128 0x3
+ 911 008d 0E       		.uleb128 0xe
+ 912 008e 3A       		.uleb128 0x3a
+ 913 008f 0B       		.uleb128 0xb
+ 914 0090 3B       		.uleb128 0x3b
+ 915 0091 0B       		.uleb128 0xb
+ 916 0092 27       		.uleb128 0x27
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 32
 
 
- 866 0016 01       		.uleb128 0x1
- 867 0017 50       		.byte	0x50
- 868 0018 9F       		.byte	0x9f
- 869 0019 00000000 		.4byte	0
- 870 001d 00000000 		.4byte	0
- 871              	.LLST1:
- 872 0021 04000000 		.4byte	.LVL8
- 873 0025 0C000000 		.4byte	.LVL11
- 874 0029 0100     		.2byte	0x1
- 875 002b 53       		.byte	0x53
- 876 002c 0C000000 		.4byte	.LVL11
- 877 0030 14000000 		.4byte	.LFE4
- 878 0034 0100     		.2byte	0x1
- 879 0036 50       		.byte	0x50
- 880 0037 00000000 		.4byte	0
- 881 003b 00000000 		.4byte	0
- 882              	.LLST2:
- 883 003f 00000000 		.4byte	.LVL12
- 884 0043 0A000000 		.4byte	.LVL15
- 885 0047 0100     		.2byte	0x1
- 886 0049 50       		.byte	0x50
- 887 004a 0A000000 		.4byte	.LVL15
- 888 004e 14000000 		.4byte	.LFE5
- 889 0052 0400     		.2byte	0x4
- 890 0054 F3       		.byte	0xf3
- 891 0055 01       		.uleb128 0x1
- 892 0056 50       		.byte	0x50
- 893 0057 9F       		.byte	0x9f
- 894 0058 00000000 		.4byte	0
- 895 005c 00000000 		.4byte	0
- 896              	.LLST3:
- 897 0060 04000000 		.4byte	.LVL13
- 898 0064 0C000000 		.4byte	.LVL16
- 899 0068 0100     		.2byte	0x1
- 900 006a 53       		.byte	0x53
- 901 006b 0C000000 		.4byte	.LVL16
- 902 006f 14000000 		.4byte	.LFE5
- 903 0073 0100     		.2byte	0x1
- 904 0075 50       		.byte	0x50
- 905 0076 00000000 		.4byte	0
- 906 007a 00000000 		.4byte	0
- 907              		.section	.debug_aranges,"",%progbits
- 908 0000 5C000000 		.4byte	0x5c
- 909 0004 0200     		.2byte	0x2
- 910 0006 00000000 		.4byte	.Ldebug_info0
- 911 000a 04       		.byte	0x4
- 912 000b 00       		.byte	0
- 913 000c 0000     		.2byte	0
- 914 000e 0000     		.2byte	0
- 915 0010 00000000 		.4byte	.LFB7
- 916 0014 08000000 		.4byte	.LFE7-.LFB7
- 917 0018 00000000 		.4byte	.LFB8
- 918 001c 08000000 		.4byte	.LFE8-.LFB8
- 919 0020 00000000 		.4byte	.LFB0
- 920 0024 08000000 		.4byte	.LFE0-.LFB0
- 921 0028 00000000 		.4byte	.LFB1
- 922 002c 18000000 		.4byte	.LFE1-.LFB1
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 32
+ 917 0093 19       		.uleb128 0x19
+ 918 0094 11       		.uleb128 0x11
+ 919 0095 01       		.uleb128 0x1
+ 920 0096 12       		.uleb128 0x12
+ 921 0097 06       		.uleb128 0x6
+ 922 0098 40       		.uleb128 0x40
+ 923 0099 18       		.uleb128 0x18
+ 924 009a 9742     		.uleb128 0x2117
+ 925 009c 19       		.uleb128 0x19
+ 926 009d 01       		.uleb128 0x1
+ 927 009e 13       		.uleb128 0x13
+ 928 009f 00       		.byte	0
+ 929 00a0 00       		.byte	0
+ 930 00a1 0D       		.uleb128 0xd
+ 931 00a2 898201   		.uleb128 0x4109
+ 932 00a5 01       		.byte	0x1
+ 933 00a6 11       		.uleb128 0x11
+ 934 00a7 01       		.uleb128 0x1
+ 935 00a8 31       		.uleb128 0x31
+ 936 00a9 13       		.uleb128 0x13
+ 937 00aa 01       		.uleb128 0x1
+ 938 00ab 13       		.uleb128 0x13
+ 939 00ac 00       		.byte	0
+ 940 00ad 00       		.byte	0
+ 941 00ae 0E       		.uleb128 0xe
+ 942 00af 2E       		.uleb128 0x2e
+ 943 00b0 01       		.byte	0x1
+ 944 00b1 3F       		.uleb128 0x3f
+ 945 00b2 19       		.uleb128 0x19
+ 946 00b3 03       		.uleb128 0x3
+ 947 00b4 0E       		.uleb128 0xe
+ 948 00b5 3A       		.uleb128 0x3a
+ 949 00b6 0B       		.uleb128 0xb
+ 950 00b7 3B       		.uleb128 0x3b
+ 951 00b8 05       		.uleb128 0x5
+ 952 00b9 27       		.uleb128 0x27
+ 953 00ba 19       		.uleb128 0x19
+ 954 00bb 11       		.uleb128 0x11
+ 955 00bc 01       		.uleb128 0x1
+ 956 00bd 12       		.uleb128 0x12
+ 957 00be 06       		.uleb128 0x6
+ 958 00bf 40       		.uleb128 0x40
+ 959 00c0 18       		.uleb128 0x18
+ 960 00c1 9742     		.uleb128 0x2117
+ 961 00c3 19       		.uleb128 0x19
+ 962 00c4 01       		.uleb128 0x1
+ 963 00c5 13       		.uleb128 0x13
+ 964 00c6 00       		.byte	0
+ 965 00c7 00       		.byte	0
+ 966 00c8 0F       		.uleb128 0xf
+ 967 00c9 05       		.uleb128 0x5
+ 968 00ca 00       		.byte	0
+ 969 00cb 03       		.uleb128 0x3
+ 970 00cc 0E       		.uleb128 0xe
+ 971 00cd 3A       		.uleb128 0x3a
+ 972 00ce 0B       		.uleb128 0xb
+ 973 00cf 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 33
 
 
- 923 0030 00000000 		.4byte	.LFB2
- 924 0034 20000000 		.4byte	.LFE2-.LFB2
- 925 0038 00000000 		.4byte	.LFB3
- 926 003c 20000000 		.4byte	.LFE3-.LFB3
- 927 0040 00000000 		.4byte	.LFB4
- 928 0044 14000000 		.4byte	.LFE4-.LFB4
- 929 0048 00000000 		.4byte	.LFB5
- 930 004c 14000000 		.4byte	.LFE5-.LFB5
- 931 0050 00000000 		.4byte	.LFB9
- 932 0054 3C000000 		.4byte	.LFE9-.LFB9
- 933 0058 00000000 		.4byte	0
- 934 005c 00000000 		.4byte	0
- 935              		.section	.debug_ranges,"",%progbits
- 936              	.Ldebug_ranges0:
- 937 0000 00000000 		.4byte	.LFB7
- 938 0004 08000000 		.4byte	.LFE7
- 939 0008 00000000 		.4byte	.LFB8
- 940 000c 08000000 		.4byte	.LFE8
- 941 0010 00000000 		.4byte	.LFB0
- 942 0014 08000000 		.4byte	.LFE0
- 943 0018 00000000 		.4byte	.LFB1
- 944 001c 18000000 		.4byte	.LFE1
- 945 0020 00000000 		.4byte	.LFB2
- 946 0024 20000000 		.4byte	.LFE2
- 947 0028 00000000 		.4byte	.LFB3
- 948 002c 20000000 		.4byte	.LFE3
- 949 0030 00000000 		.4byte	.LFB4
- 950 0034 14000000 		.4byte	.LFE4
- 951 0038 00000000 		.4byte	.LFB5
- 952 003c 14000000 		.4byte	.LFE5
- 953 0040 00000000 		.4byte	.LFB9
- 954 0044 3C000000 		.4byte	.LFE9
- 955 0048 00000000 		.4byte	0
- 956 004c 00000000 		.4byte	0
- 957              		.section	.debug_line,"",%progbits
- 958              	.Ldebug_line0:
- 959 0000 27010000 		.section	.debug_str,"MS",%progbits,1
- 959      02005C00 
- 959      00000201 
- 959      FB0E0D00 
- 959      01010101 
- 960              	.LASF15:
- 961 0000 72656733 		.ascii	"reg32\000"
- 961      3200
- 962              	.LASF23:
- 963 0006 53657269 		.ascii	"Serial_Stop\000"
- 963      616C5F53 
- 963      746F7000 
- 964              	.LASF28:
- 965 0012 74784669 		.ascii	"txFifoCtrl\000"
- 965      666F4374 
- 965      726C00
- 966              	.LASF26:
- 967 001d 6C657665 		.ascii	"level\000"
- 967      6C00
- 968              	.LASF24:
- 969 0023 53657269 		.ascii	"Serial_SetRxFifoLevel\000"
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 33
+ 974 00d0 05       		.uleb128 0x5
+ 975 00d1 49       		.uleb128 0x49
+ 976 00d2 13       		.uleb128 0x13
+ 977 00d3 02       		.uleb128 0x2
+ 978 00d4 17       		.uleb128 0x17
+ 979 00d5 00       		.byte	0
+ 980 00d6 00       		.byte	0
+ 981 00d7 10       		.uleb128 0x10
+ 982 00d8 34       		.uleb128 0x34
+ 983 00d9 00       		.byte	0
+ 984 00da 03       		.uleb128 0x3
+ 985 00db 0E       		.uleb128 0xe
+ 986 00dc 3A       		.uleb128 0x3a
+ 987 00dd 0B       		.uleb128 0xb
+ 988 00de 3B       		.uleb128 0x3b
+ 989 00df 05       		.uleb128 0x5
+ 990 00e0 49       		.uleb128 0x49
+ 991 00e1 13       		.uleb128 0x13
+ 992 00e2 02       		.uleb128 0x2
+ 993 00e3 17       		.uleb128 0x17
+ 994 00e4 00       		.byte	0
+ 995 00e5 00       		.byte	0
+ 996 00e6 11       		.uleb128 0x11
+ 997 00e7 05       		.uleb128 0x5
+ 998 00e8 00       		.byte	0
+ 999 00e9 03       		.uleb128 0x3
+ 1000 00ea 0E       		.uleb128 0xe
+ 1001 00eb 3A       		.uleb128 0x3a
+ 1002 00ec 0B       		.uleb128 0xb
+ 1003 00ed 3B       		.uleb128 0x3b
+ 1004 00ee 05       		.uleb128 0x5
+ 1005 00ef 49       		.uleb128 0x49
+ 1006 00f0 13       		.uleb128 0x13
+ 1007 00f1 02       		.uleb128 0x2
+ 1008 00f2 18       		.uleb128 0x18
+ 1009 00f3 00       		.byte	0
+ 1010 00f4 00       		.byte	0
+ 1011 00f5 12       		.uleb128 0x12
+ 1012 00f6 2E       		.uleb128 0x2e
+ 1013 00f7 00       		.byte	0
+ 1014 00f8 3F       		.uleb128 0x3f
+ 1015 00f9 19       		.uleb128 0x19
+ 1016 00fa 03       		.uleb128 0x3
+ 1017 00fb 0E       		.uleb128 0xe
+ 1018 00fc 3A       		.uleb128 0x3a
+ 1019 00fd 0B       		.uleb128 0xb
+ 1020 00fe 3B       		.uleb128 0x3b
+ 1021 00ff 05       		.uleb128 0x5
+ 1022 0100 27       		.uleb128 0x27
+ 1023 0101 19       		.uleb128 0x19
+ 1024 0102 11       		.uleb128 0x11
+ 1025 0103 01       		.uleb128 0x1
+ 1026 0104 12       		.uleb128 0x12
+ 1027 0105 06       		.uleb128 0x6
+ 1028 0106 40       		.uleb128 0x40
+ 1029 0107 18       		.uleb128 0x18
+ 1030 0108 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 34
 
 
- 969      616C5F53 
- 969      65745278 
- 969      4669666F 
- 969      4C657665 
- 970              	.LASF19:
- 971 0039 53657269 		.ascii	"Serial_ScbModeStop\000"
- 971      616C5F53 
- 971      63624D6F 
- 971      64655374 
- 971      6F7000
- 972              	.LASF3:
- 973 004c 73686F72 		.ascii	"short unsigned int\000"
- 973      7420756E 
- 973      7369676E 
- 973      65642069 
- 973      6E7400
- 974              	.LASF35:
- 975 005f 47656E65 		.ascii	"Generated_Source\\PSoC4\\Serial.c\000"
- 975      72617465 
- 975      645F536F 
- 975      75726365 
- 975      5C50536F 
- 976              	.LASF22:
- 977 007f 53657269 		.ascii	"Serial_Start\000"
- 977      616C5F53 
- 977      74617274 
- 977      00
- 978              	.LASF18:
- 979 008c 53657269 		.ascii	"Serial_ScbModePostEnable\000"
- 979      616C5F53 
- 979      63624D6F 
- 979      6465506F 
- 979      7374456E 
- 980              	.LASF12:
- 981 00a5 666C6F61 		.ascii	"float\000"
- 981      7400
- 982              	.LASF1:
- 983 00ab 756E7369 		.ascii	"unsigned char\000"
- 983      676E6564 
- 983      20636861 
- 983      7200
- 984              	.LASF5:
- 985 00b9 6C6F6E67 		.ascii	"long unsigned int\000"
- 985      20756E73 
- 985      69676E65 
- 985      6420696E 
- 985      7400
- 986              	.LASF9:
- 987 00cb 75696E74 		.ascii	"uint8\000"
- 987      3800
- 988              	.LASF21:
- 989 00d1 53657269 		.ascii	"Serial_Enable\000"
- 989      616C5F45 
- 989      6E61626C 
- 989      6500
- 990              	.LASF36:
- 991 00df 433A5C55 		.ascii	"C:\\Users\\gianluca_2\\Desktop\\Workspace01\\CY8C41"
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 34
+ 1031 010a 19       		.uleb128 0x19
+ 1032 010b 00       		.byte	0
+ 1033 010c 00       		.byte	0
+ 1034 010d 13       		.uleb128 0x13
+ 1035 010e 34       		.uleb128 0x34
+ 1036 010f 00       		.byte	0
+ 1037 0110 03       		.uleb128 0x3
+ 1038 0111 0E       		.uleb128 0xe
+ 1039 0112 3A       		.uleb128 0x3a
+ 1040 0113 0B       		.uleb128 0xb
+ 1041 0114 3B       		.uleb128 0x3b
+ 1042 0115 0B       		.uleb128 0xb
+ 1043 0116 49       		.uleb128 0x49
+ 1044 0117 13       		.uleb128 0x13
+ 1045 0118 3F       		.uleb128 0x3f
+ 1046 0119 19       		.uleb128 0x19
+ 1047 011a 02       		.uleb128 0x2
+ 1048 011b 18       		.uleb128 0x18
+ 1049 011c 00       		.byte	0
+ 1050 011d 00       		.byte	0
+ 1051 011e 14       		.uleb128 0x14
+ 1052 011f 2E       		.uleb128 0x2e
+ 1053 0120 00       		.byte	0
+ 1054 0121 3F       		.uleb128 0x3f
+ 1055 0122 19       		.uleb128 0x19
+ 1056 0123 3C       		.uleb128 0x3c
+ 1057 0124 19       		.uleb128 0x19
+ 1058 0125 6E       		.uleb128 0x6e
+ 1059 0126 0E       		.uleb128 0xe
+ 1060 0127 03       		.uleb128 0x3
+ 1061 0128 0E       		.uleb128 0xe
+ 1062 0129 3A       		.uleb128 0x3a
+ 1063 012a 0B       		.uleb128 0xb
+ 1064 012b 3B       		.uleb128 0x3b
+ 1065 012c 0B       		.uleb128 0xb
+ 1066 012d 00       		.byte	0
+ 1067 012e 00       		.byte	0
+ 1068 012f 00       		.byte	0
+ 1069              		.section	.debug_loc,"",%progbits
+ 1070              	.Ldebug_loc0:
+ 1071              	.LLST0:
+ 1072 0000 00000000 		.4byte	.LVL11
+ 1073 0004 0A000000 		.4byte	.LVL14
+ 1074 0008 0100     		.2byte	0x1
+ 1075 000a 50       		.byte	0x50
+ 1076 000b 0A000000 		.4byte	.LVL14
+ 1077 000f 14000000 		.4byte	.LFE4
+ 1078 0013 0400     		.2byte	0x4
+ 1079 0015 F3       		.byte	0xf3
+ 1080 0016 01       		.uleb128 0x1
+ 1081 0017 50       		.byte	0x50
+ 1082 0018 9F       		.byte	0x9f
+ 1083 0019 00000000 		.4byte	0
+ 1084 001d 00000000 		.4byte	0
+ 1085              	.LLST1:
+ 1086 0021 04000000 		.4byte	.LVL12
+ 1087 0025 0C000000 		.4byte	.LVL15
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 35
 
 
- 991      73657273 
- 991      5C676961 
- 991      6E6C7563 
- 991      615F325C 
- 992 010d 32345F54 		.ascii	"24_TEST.cydsn\000"
- 992      4553542E 
- 992      63796473 
- 992      6E00
- 993              	.LASF13:
- 994 011b 646F7562 		.ascii	"double\000"
- 994      6C6500
- 995              	.LASF37:
- 996 0122 53657269 		.ascii	"Serial_I2CSlaveNackGeneration\000"
- 996      616C5F49 
- 996      3243536C 
- 996      6176654E 
- 996      61636B47 
- 997              	.LASF33:
- 998 0140 53657269 		.ascii	"Serial_UartInit\000"
- 998      616C5F55 
- 998      61727449 
- 998      6E697400 
- 999              	.LASF10:
- 1000 0150 75696E74 		.ascii	"uint16\000"
- 1000      313600
- 1001              	.LASF11:
- 1002 0157 75696E74 		.ascii	"uint32\000"
- 1002      333200
- 1003              	.LASF25:
- 1004 015e 53657269 		.ascii	"Serial_SetTxFifoLevel\000"
- 1004      616C5F53 
- 1004      65745478 
- 1004      4669666F 
- 1004      4C657665 
- 1005              	.LASF8:
- 1006 0174 756E7369 		.ascii	"unsigned int\000"
- 1006      676E6564 
- 1006      20696E74 
- 1006      00
- 1007              	.LASF7:
- 1008 0181 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1008      206C6F6E 
- 1008      6720756E 
- 1008      7369676E 
- 1008      65642069 
- 1009              	.LASF34:
- 1010 0198 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1010      43313120 
- 1010      352E342E 
- 1010      31203230 
- 1010      31363036 
- 1011 01cb 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 1011      20726576 
- 1011      6973696F 
- 1011      6E203233 
- 1011      37373135 
- 1012 01fe 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 35
+ 1088 0029 0100     		.2byte	0x1
+ 1089 002b 53       		.byte	0x53
+ 1090 002c 0C000000 		.4byte	.LVL15
+ 1091 0030 14000000 		.4byte	.LFE4
+ 1092 0034 0100     		.2byte	0x1
+ 1093 0036 50       		.byte	0x50
+ 1094 0037 00000000 		.4byte	0
+ 1095 003b 00000000 		.4byte	0
+ 1096              	.LLST2:
+ 1097 003f 00000000 		.4byte	.LVL16
+ 1098 0043 0A000000 		.4byte	.LVL19
+ 1099 0047 0100     		.2byte	0x1
+ 1100 0049 50       		.byte	0x50
+ 1101 004a 0A000000 		.4byte	.LVL19
+ 1102 004e 14000000 		.4byte	.LFE5
+ 1103 0052 0400     		.2byte	0x4
+ 1104 0054 F3       		.byte	0xf3
+ 1105 0055 01       		.uleb128 0x1
+ 1106 0056 50       		.byte	0x50
+ 1107 0057 9F       		.byte	0x9f
+ 1108 0058 00000000 		.4byte	0
+ 1109 005c 00000000 		.4byte	0
+ 1110              	.LLST3:
+ 1111 0060 04000000 		.4byte	.LVL17
+ 1112 0064 0C000000 		.4byte	.LVL20
+ 1113 0068 0100     		.2byte	0x1
+ 1114 006a 53       		.byte	0x53
+ 1115 006b 0C000000 		.4byte	.LVL20
+ 1116 006f 14000000 		.4byte	.LFE5
+ 1117 0073 0100     		.2byte	0x1
+ 1118 0075 50       		.byte	0x50
+ 1119 0076 00000000 		.4byte	0
+ 1120 007a 00000000 		.4byte	0
+ 1121              		.section	.debug_aranges,"",%progbits
+ 1122 0000 6C000000 		.4byte	0x6c
+ 1123 0004 0200     		.2byte	0x2
+ 1124 0006 00000000 		.4byte	.Ldebug_info0
+ 1125 000a 04       		.byte	0x4
+ 1126 000b 00       		.byte	0
+ 1127 000c 0000     		.2byte	0
+ 1128 000e 0000     		.2byte	0
+ 1129 0010 00000000 		.4byte	.LFB7
+ 1130 0014 0A000000 		.4byte	.LFE7-.LFB7
+ 1131 0018 00000000 		.4byte	.LFB8
+ 1132 001c 08000000 		.4byte	.LFE8-.LFB8
+ 1133 0020 00000000 		.4byte	.LFB9
+ 1134 0024 08000000 		.4byte	.LFE9-.LFB9
+ 1135 0028 00000000 		.4byte	.LFB0
+ 1136 002c 08000000 		.4byte	.LFE0-.LFB0
+ 1137 0030 00000000 		.4byte	.LFB1
+ 1138 0034 1C000000 		.4byte	.LFE1-.LFB1
+ 1139 0038 00000000 		.4byte	.LFB2
+ 1140 003c 20000000 		.4byte	.LFE2-.LFB2
+ 1141 0040 00000000 		.4byte	.LFB3
+ 1142 0044 2C000000 		.4byte	.LFE3-.LFB3
+ 1143 0048 00000000 		.4byte	.LFB4
+ 1144 004c 14000000 		.4byte	.LFE4-.LFB4
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 36
 
 
- 1012      66756E63 
- 1012      74696F6E 
- 1012      2D736563 
- 1012      74696F6E 
- 1013              	.LASF29:
- 1014 0226 53657269 		.ascii	"Serial_initVar\000"
- 1014      616C5F69 
- 1014      6E697456 
- 1014      617200
- 1015              	.LASF20:
- 1016 0235 53657269 		.ascii	"Serial_Init\000"
- 1016      616C5F49 
- 1016      6E697400 
- 1017              	.LASF17:
- 1018 0241 73697A65 		.ascii	"sizetype\000"
- 1018      74797065 
- 1018      00
- 1019              	.LASF6:
- 1020 024a 6C6F6E67 		.ascii	"long long int\000"
- 1020      206C6F6E 
- 1020      6720696E 
- 1020      7400
- 1021              	.LASF14:
- 1022 0258 63686172 		.ascii	"char\000"
- 1022      00
- 1023              	.LASF2:
- 1024 025d 73686F72 		.ascii	"short int\000"
- 1024      7420696E 
- 1024      7400
- 1025              	.LASF31:
- 1026 0267 53657269 		.ascii	"Serial_UartPostEnable\000"
- 1026      616C5F55 
- 1026      61727450 
- 1026      6F737445 
- 1026      6E61626C 
- 1027              	.LASF30:
- 1028 027d 53657269 		.ascii	"Serial_IntrTxMask\000"
- 1028      616C5F49 
- 1028      6E747254 
- 1028      784D6173 
- 1028      6B00
- 1029              	.LASF32:
- 1030 028f 53657269 		.ascii	"Serial_UartStop\000"
- 1030      616C5F55 
- 1030      61727453 
- 1030      746F7000 
- 1031              	.LASF27:
- 1032 029f 72784669 		.ascii	"rxFifoCtrl\000"
- 1032      666F4374 
- 1032      726C00
- 1033              	.LASF4:
- 1034 02aa 6C6F6E67 		.ascii	"long int\000"
- 1034      20696E74 
- 1034      00
- 1035              	.LASF16:
- 1036 02b3 6C6F6E67 		.ascii	"long double\000"
- 1036      20646F75 
-ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccq8PAMi.s 			page 36
+ 1145 0050 00000000 		.4byte	.LFB5
+ 1146 0054 14000000 		.4byte	.LFE5-.LFB5
+ 1147 0058 00000000 		.4byte	.LFB6
+ 1148 005c 0C000000 		.4byte	.LFE6-.LFB6
+ 1149 0060 00000000 		.4byte	.LFB10
+ 1150 0064 3C000000 		.4byte	.LFE10-.LFB10
+ 1151 0068 00000000 		.4byte	0
+ 1152 006c 00000000 		.4byte	0
+ 1153              		.section	.debug_ranges,"",%progbits
+ 1154              	.Ldebug_ranges0:
+ 1155 0000 00000000 		.4byte	.LFB7
+ 1156 0004 0A000000 		.4byte	.LFE7
+ 1157 0008 00000000 		.4byte	.LFB8
+ 1158 000c 08000000 		.4byte	.LFE8
+ 1159 0010 00000000 		.4byte	.LFB9
+ 1160 0014 08000000 		.4byte	.LFE9
+ 1161 0018 00000000 		.4byte	.LFB0
+ 1162 001c 08000000 		.4byte	.LFE0
+ 1163 0020 00000000 		.4byte	.LFB1
+ 1164 0024 1C000000 		.4byte	.LFE1
+ 1165 0028 00000000 		.4byte	.LFB2
+ 1166 002c 20000000 		.4byte	.LFE2
+ 1167 0030 00000000 		.4byte	.LFB3
+ 1168 0034 2C000000 		.4byte	.LFE3
+ 1169 0038 00000000 		.4byte	.LFB4
+ 1170 003c 14000000 		.4byte	.LFE4
+ 1171 0040 00000000 		.4byte	.LFB5
+ 1172 0044 14000000 		.4byte	.LFE5
+ 1173 0048 00000000 		.4byte	.LFB6
+ 1174 004c 0C000000 		.4byte	.LFE6
+ 1175 0050 00000000 		.4byte	.LFB10
+ 1176 0054 3C000000 		.4byte	.LFE10
+ 1177 0058 00000000 		.4byte	0
+ 1178 005c 00000000 		.4byte	0
+ 1179              		.section	.debug_line,"",%progbits
+ 1180              	.Ldebug_line0:
+ 1181 0000 5B010000 		.section	.debug_str,"MS",%progbits,1
+ 1181      02006700 
+ 1181      00000201 
+ 1181      FB0E0D00 
+ 1181      01010101 
+ 1182              	.LASF15:
+ 1183 0000 72656733 		.ascii	"reg32\000"
+ 1183      3200
+ 1184              	.LASF24:
+ 1185 0006 53657269 		.ascii	"Serial_Stop\000"
+ 1185      616C5F53 
+ 1185      746F7000 
+ 1186              	.LASF29:
+ 1187 0012 74784669 		.ascii	"txFifoCtrl\000"
+ 1187      666F4374 
+ 1187      726C00
+ 1188              	.LASF27:
+ 1189 001d 6C657665 		.ascii	"level\000"
+ 1189      6C00
+ 1190              	.LASF25:
+ 1191 0023 53657269 		.ascii	"Serial_SetRxFifoLevel\000"
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 37
 
 
- 1036      626C6500 
- 1037              	.LASF0:
- 1038 02bf 7369676E 		.ascii	"signed char\000"
- 1038      65642063 
- 1038      68617200 
- 1039              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1191      616C5F53 
+ 1191      65745278 
+ 1191      4669666F 
+ 1191      4C657665 
+ 1192              	.LASF20:
+ 1193 0039 53657269 		.ascii	"Serial_ScbModeStop\000"
+ 1193      616C5F53 
+ 1193      63624D6F 
+ 1193      64655374 
+ 1193      6F7000
+ 1194              	.LASF3:
+ 1195 004c 73686F72 		.ascii	"short unsigned int\000"
+ 1195      7420756E 
+ 1195      7369676E 
+ 1195      65642069 
+ 1195      6E7400
+ 1196              	.LASF42:
+ 1197 005f 47656E65 		.ascii	"Generated_Source\\PSoC4\\Serial.c\000"
+ 1197      72617465 
+ 1197      645F536F 
+ 1197      75726365 
+ 1197      5C50536F 
+ 1198              	.LASF23:
+ 1199 007f 53657269 		.ascii	"Serial_Start\000"
+ 1199      616C5F53 
+ 1199      74617274 
+ 1199      00
+ 1200              	.LASF19:
+ 1201 008c 53657269 		.ascii	"Serial_ScbModePostEnable\000"
+ 1201      616C5F53 
+ 1201      63624D6F 
+ 1201      6465506F 
+ 1201      7374456E 
+ 1202              	.LASF30:
+ 1203 00a5 53657269 		.ascii	"Serial_SetCustomInterruptHandler\000"
+ 1203      616C5F53 
+ 1203      65744375 
+ 1203      73746F6D 
+ 1203      496E7465 
+ 1204              	.LASF12:
+ 1205 00c6 666C6F61 		.ascii	"float\000"
+ 1205      7400
+ 1206              	.LASF1:
+ 1207 00cc 756E7369 		.ascii	"unsigned char\000"
+ 1207      676E6564 
+ 1207      20636861 
+ 1207      7200
+ 1208              	.LASF5:
+ 1209 00da 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1209      20756E73 
+ 1209      69676E65 
+ 1209      6420696E 
+ 1209      7400
+ 1210              	.LASF9:
+ 1211 00ec 75696E74 		.ascii	"uint8\000"
+ 1211      3800
+ 1212              	.LASF22:
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 38
+
+
+ 1213 00f2 53657269 		.ascii	"Serial_Enable\000"
+ 1213      616C5F45 
+ 1213      6E61626C 
+ 1213      6500
+ 1214              	.LASF43:
+ 1215 0100 433A5C55 		.ascii	"C:\\Users\\gianluca_2\\Desktop\\Workspace01\\CY8C41"
+ 1215      73657273 
+ 1215      5C676961 
+ 1215      6E6C7563 
+ 1215      615F325C 
+ 1216 012e 32345F54 		.ascii	"24_TEST.cydsn\000"
+ 1216      4553542E 
+ 1216      63796473 
+ 1216      6E00
+ 1217              	.LASF13:
+ 1218 013c 646F7562 		.ascii	"double\000"
+ 1218      6C6500
+ 1219              	.LASF44:
+ 1220 0143 53657269 		.ascii	"Serial_I2CSlaveNackGeneration\000"
+ 1220      616C5F49 
+ 1220      3243536C 
+ 1220      6176654E 
+ 1220      61636B47 
+ 1221              	.LASF31:
+ 1222 0161 66756E63 		.ascii	"func\000"
+ 1222      00
+ 1223              	.LASF35:
+ 1224 0166 4379496E 		.ascii	"CyIntEnable\000"
+ 1224      74456E61 
+ 1224      626C6500 
+ 1225              	.LASF38:
+ 1226 0172 53657269 		.ascii	"Serial_UartInit\000"
+ 1226      616C5F55 
+ 1226      61727449 
+ 1226      6E697400 
+ 1227              	.LASF10:
+ 1228 0182 75696E74 		.ascii	"uint16\000"
+ 1228      313600
+ 1229              	.LASF11:
+ 1230 0189 75696E74 		.ascii	"uint32\000"
+ 1230      333200
+ 1231              	.LASF26:
+ 1232 0190 53657269 		.ascii	"Serial_SetTxFifoLevel\000"
+ 1232      616C5F53 
+ 1232      65745478 
+ 1232      4669666F 
+ 1232      4C657665 
+ 1233              	.LASF8:
+ 1234 01a6 756E7369 		.ascii	"unsigned int\000"
+ 1234      676E6564 
+ 1234      20696E74 
+ 1234      00
+ 1235              	.LASF34:
+ 1236 01b3 53657269 		.ascii	"Serial_IntrTxMask\000"
+ 1236      616C5F49 
+ 1236      6E747254 
+ 1236      784D6173 
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 39
+
+
+ 1236      6B00
+ 1237              	.LASF7:
+ 1238 01c5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1238      206C6F6E 
+ 1238      6720756E 
+ 1238      7369676E 
+ 1238      65642069 
+ 1239              	.LASF40:
+ 1240 01dc 4379496E 		.ascii	"CyIntClearPending\000"
+ 1240      74436C65 
+ 1240      61725065 
+ 1240      6E64696E 
+ 1240      6700
+ 1241              	.LASF41:
+ 1242 01ee 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1242      43313120 
+ 1242      352E342E 
+ 1242      31203230 
+ 1242      31363036 
+ 1243 0221 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1243      20726576 
+ 1243      6973696F 
+ 1243      6E203233 
+ 1243      37373135 
+ 1244 0254 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1244      66756E63 
+ 1244      74696F6E 
+ 1244      2D736563 
+ 1244      74696F6E 
+ 1245              	.LASF32:
+ 1246 027c 53657269 		.ascii	"Serial_initVar\000"
+ 1246      616C5F69 
+ 1246      6E697456 
+ 1246      617200
+ 1247              	.LASF21:
+ 1248 028b 53657269 		.ascii	"Serial_Init\000"
+ 1248      616C5F49 
+ 1248      6E697400 
+ 1249              	.LASF17:
+ 1250 0297 73697A65 		.ascii	"sizetype\000"
+ 1250      74797065 
+ 1250      00
+ 1251              	.LASF6:
+ 1252 02a0 6C6F6E67 		.ascii	"long long int\000"
+ 1252      206C6F6E 
+ 1252      6720696E 
+ 1252      7400
+ 1253              	.LASF14:
+ 1254 02ae 63686172 		.ascii	"char\000"
+ 1254      00
+ 1255              	.LASF39:
+ 1256 02b3 4379496E 		.ascii	"CyIntDisable\000"
+ 1256      74446973 
+ 1256      61626C65 
+ 1256      00
+ 1257              	.LASF2:
+ 1258 02c0 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\GIANLU~1\AppData\Local\Temp\ccdfrPJU.s 			page 40
+
+
+ 1258      7420696E 
+ 1258      7400
+ 1259              	.LASF36:
+ 1260 02ca 53657269 		.ascii	"Serial_UartPostEnable\000"
+ 1260      616C5F55 
+ 1260      61727450 
+ 1260      6F737445 
+ 1260      6E61626C 
+ 1261              	.LASF18:
+ 1262 02e0 53657269 		.ascii	"Serial_ScbEnableIntr\000"
+ 1262      616C5F53 
+ 1262      6362456E 
+ 1262      61626C65 
+ 1262      496E7472 
+ 1263              	.LASF37:
+ 1264 02f5 53657269 		.ascii	"Serial_UartStop\000"
+ 1264      616C5F55 
+ 1264      61727453 
+ 1264      746F7000 
+ 1265              	.LASF28:
+ 1266 0305 72784669 		.ascii	"rxFifoCtrl\000"
+ 1266      666F4374 
+ 1266      726C00
+ 1267              	.LASF4:
+ 1268 0310 6C6F6E67 		.ascii	"long int\000"
+ 1268      20696E74 
+ 1268      00
+ 1269              	.LASF16:
+ 1270 0319 6C6F6E67 		.ascii	"long double\000"
+ 1270      20646F75 
+ 1270      626C6500 
+ 1271              	.LASF0:
+ 1272 0325 7369676E 		.ascii	"signed char\000"
+ 1272      65642063 
+ 1272      68617200 
+ 1273              	.LASF33:
+ 1274 0331 53657269 		.ascii	"Serial_customIntrHandler\000"
+ 1274      616C5F63 
+ 1274      7573746F 
+ 1274      6D496E74 
+ 1274      7248616E 
+ 1275              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

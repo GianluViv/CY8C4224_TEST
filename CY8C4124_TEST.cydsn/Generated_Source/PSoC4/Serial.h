@@ -62,7 +62,7 @@
 #endif /* (!Serial_CY_SCBIP_V1) */
 
 /* Interrupts remove options */
-#define Serial_REMOVE_SCB_IRQ             (1u)
+#define Serial_REMOVE_SCB_IRQ             (0u)
 #define Serial_SCB_IRQ_INTERNAL           (0u == Serial_REMOVE_SCB_IRQ)
 
 #define Serial_REMOVE_UART_RX_WAKEUP_IRQ  (1u)

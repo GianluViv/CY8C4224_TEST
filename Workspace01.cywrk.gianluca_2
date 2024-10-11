@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Workspace01">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Workspace01\CY8C4124_TEST">
 <ExpandedNodeIds>
 <v>Workspace01</v>
 <v>Workspace01\CY8C4124_TEST</v>
@@ -115,18 +115,19 @@
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_W_PM.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\RED.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\RED_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_BOOT.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_rx.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_rx_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_SCBCLK.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_SPI_UART.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_SPI_UART_INT.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_tx.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_tx_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_UART.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_UART_BOOT.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_BOOT.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_PM.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx_PM.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SCB_IRQ.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SCBCLK.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SPI_UART.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SPI_UART_INT.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_tx.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_tx_PM.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_UART.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_UART_BOOT.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\WHITE.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\WHITE_PM.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\CY8C4124_TEST.elf</v>
@@ -183,10 +184,10 @@
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_W_PM.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\RED.lst</v>
 <v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\RED_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_BOOT.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_PM.lst</v>
-<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\Serial_rx.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_BOOT.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_PM.lst</v>
+<v>Workspace01\CY8C4124_TEST\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

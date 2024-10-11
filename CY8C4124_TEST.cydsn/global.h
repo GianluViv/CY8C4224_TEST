@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <project.h>
 
+#define dataAvailable  UART_SpiUartGetRxBufferSize()
+
 #define LOW            0
 #define HIGH           1
 
